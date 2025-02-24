@@ -355,6 +355,7 @@
 .TSIF01 .comment-section > .comment-header > #comment-close-button {
     display: block;
     cursor: pointer;
+    box-sizing: border-box;
     padding: 16px;
     width: 100%;
 }
