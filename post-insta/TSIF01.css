@@ -327,6 +327,7 @@
     left: 0;
     z-index: 10;
     transition: bottom 0.6s ease-in-out;
+    box-sizing: border-box;
     border-top: 1px solid var(--tsif01-bd-device);
     border-top-right-radius: 32px;
     border-top-left-radius: 32px;
@@ -338,7 +339,6 @@
     overflow: hidden;
     color: inherit;
     font-size: var(--tsif01-fs-tiny);
-
 }
 
 .comment-section.active {
