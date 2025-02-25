@@ -1,0 +1,338 @@
+/*  Code : crédits Tsukimi Orikasa, sur https://just-married.variousforum.com */
+
+/* ==================================================
+    GLOBAL VARIABLES
+===================================================== */
+
+:root {
+    --tsifr01-clr-accent: #0095f6;
+    --tsifr01-clr-text: #373c7d;
+    --tsifr01-bg-device: #f9f9f9;
+    --tsifr01-bg-screen: #252525;
+    --tsifr01-bd-device: #cccccc;
+    --tsifr01-bd-stacked: #ffffff;
+    --tsifr01-br-device: 20px;
+    --tsifr01-br-btn: 7px;
+    --tsifr01-br-pill: 16px;
+    --tsifr01-br-full: 50%;
+    --tsifr01-lh-null: 1;
+    --tsifr01-lh-base: 1.5;
+    --tsifr01-fs-tiny: 12.8px;
+    --tsifr01-fs-small: 14px;
+    --tsifr01-fs-base: 16px;
+    --tsifr01-fs-medium: 18px;
+    --tsifr01-ff-base: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    --tsifr01-sp-min-xs: 2px;
+    --tsifr01-sp-min-sm: 4px;
+    --tsifr01-sp-min-md: 6px;
+    --tsifr01-sp-min-lg: 8px;
+    --tsifr01-sp-min-xl: 12px;
+    --tsifr01-sp-base: 16px;
+    --tsifr01-sp-base-xs: 18px;
+    --tsifr01-sp-base-sm: 20px;
+    --tsifr01-sp-base-md: 22px;
+    --tsifr01-sp-base-lg: 24px;
+    --tsifr01-sp-base-xl: 28px;
+    --tsifr01-sp-double: 32px;
+    --tsifr01-device-width: 420px;
+    --tsifr01-device-height: 700px;
+    --tsifr01-device-shadow: rgba(0, 0, 0, 0.1) 2px 2px 5px;
+}
+
+/*  Reset for compatibility */
+
+.TSIFR01 ::-moz-selection {
+    background-color: var(--tsifr01-clr-accent);
+    color: white;
+}
+
+.TSIFR01 ::selection {
+    background-color: var(--tsifr01-clr-accent);
+    color: white;
+}
+
+.TSIFR01 {
+    font-size: var(--tsifr01-fs-base);
+    line-height: var(--tsifr01-lh-base);
+    font-family: var(--tsifr01-ff-base);
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    color: var(--tsifr01-clr-text);
+}
+
+.TSIFR01 a {
+    color: inherit;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.TSIFR01 p {
+    margin: 0;
+}
+
+.TSIFR01 a.link {
+    -webkit-transition: color .15s ease-out;
+    -o-transition: color .15s ease-out;
+    transition: color .15s ease-out;
+}
+
+.TSIFR01 a.link:hover {
+    color: #0095f6;
+}
+
+/* ==================================================
+    NOTIF LAYOUT
+===================================================== */
+
+.TSIFR01 .notif-screen {
+    cursor: default;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    -webkit-box-shadow: var(--tsifr01-device-shadow);
+            box-shadow: var(--tsifr01-device-shadow);
+    border: 1px solid var(--tsifr01-bd-device);
+    border-radius: 24px;
+    background-color: #ffffff;
+    padding: 24px 16px;
+    width: 100%;
+    max-width: var(--tsifr01-device-width);
+    max-height: -webkit-fit-content;
+    max-height: -moz-fit-content;
+    max-height: fit-content;
+    overflow: hidden;
+    color: inherit;
+}
+
+/* ==================================================
+    APPLI (profile content)
+===================================================== */
+
+.TSIFR01 .notif-list {
+    width: 100%;
+}
+
+.TSIFR01 .notif-list > .user-nav {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    margin-bottom: var(--tsifr01-sp-min-lg);
+    padding-bottom: var(--tsifr01-sp-min-lg);
+    width: 100%;
+}
+
+.TSIFR01 .user-nav > * {
+    font-weight: 600;
+    font-size: var(--tsifr01-fs-base);
+}
+
+.TSIFR01 .icon-group {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    gap: var(--tsifr01-sp-min-lg);
+}
+
+.TSIFR01 .btn-icon {
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    position: relative;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+        align-items: center;
+    cursor: pointer;
+    background-position: 50% center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.TSIFR01 .icon-notif {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='22' height='22' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.25' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath stroke='none' d='M0 0h24v24H0z' fill='none'/%3E%3Cpath d='M10 5a2 2 0 1 1 4 0a7 7 0 0 1 4 6v3a4 4 0 0 0 2 3h-16a4 4 0 0 0 2 -3v-3a7 7 0 0 1 4 -6' /%3E%3Cpath d='M9 17v1a3 3 0 0 0 6 0v-1' /%3E%3C/svg%3E");
+    width: 22px;
+    height: 22px;
+}
+
+.TSIFR01 .icon-settings {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='22' height='22' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.25' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath stroke='none' d='M0 0h24v24H0z' fill='none'/%3E%3Cpath d='M10.325 4.317c.426 -1.756 2.924 -1.756 3.35 0a1.724 1.724 0 0 0 2.573 1.066c1.543 -.94 3.31 .826 2.37 2.37a1.724 1.724 0 0 0 1.065 2.572c1.756 .426 1.756 2.924 0 3.35a1.724 1.724 0 0 0 -1.066 2.573c.94 1.543 -.826 3.31 -2.37 2.37a1.724 1.724 0 0 0 -2.572 1.065c-.426 1.756 -2.924 1.756 -3.35 0a1.724 1.724 0 0 0 -2.573 -1.066c-1.543 .94 -3.31 -.826 -2.37 -2.37a1.724 1.724 0 0 0 -1.065 -2.572c-1.756 -.426 -1.756 -2.924 0 -3.35a1.724 1.724 0 0 0 1.066 -2.573c-.94 -1.543 .826 -3.31 2.37 -2.37c1 .608 2.296 .07 2.572 -1.065z' /%3E%3Cpath d='M9 12a3 3 0 1 0 6 0a3 3 0 0 0 -6 0' /%3E%3C/svg%3E");
+    width: 22px;
+    height: 22px;
+}
+
+.TSIFR01 .notif-item {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    gap: var(--tsifr01-sp-base);
+    -webkit-transition: background-color .15s ease-out;
+    -o-transition: background-color .15s ease-out;
+    transition: background-color .15s ease-out;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    border-top: 1px solid #f1f1f1;
+    background-color: transparent;
+    padding-block: var(--tsifr01-sp-base-xs);
+}
+
+.TSIFR01 .notif-item:hover {
+    background-color: #fafafa;
+}
+
+.TSIFR01 .notif-item > img {
+    border: 2px solid white;
+    border-radius: var(--tsifr01-br-full);
+    background-color: #0095f6;
+    aspect-ratio: 1/1;
+    width: 60px;
+    height: 60px;
+    overflow: hidden;
+    -o-object-fit: cover;
+       object-fit: cover;
+}
+
+.TSIFR01 .notif-block {
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+    width: 100%;
+}
+
+.TSIFR01 .notif-block > .notif-title {
+    display: -webkit-box;
+    margin-bottom: var(--tsifr01-sp-min-sm);
+    font-size: var(--tsifr01-fs-small);
+    text-wrap: var(--tsifr01-sp-base-lg);
+    -webkit-box-orient: vertical;
+    max-width: 100%;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+}
+
+.TSIFR01 .notif-block > .notif-infos {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    opacity: .75;
+    margin-bottom: var(--tsifr01-sp-min-xl);
+    width: 100%;
+    font-weight: 400;
+    font-size: var(--tsifr01-fs-tiny);
+}
+
+.TSIFR01 .notif-block > .btn-group {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    gap: var(--tsifr01-sp-min-lg);
+}
+
+.TSIFR01 .btn {
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    cursor: pointer;
+    border: 1.5px solid transparent;
+    border-radius: var(--tsifr01-br-btn);
+    background-color: transparent;
+    padding: var(--tsifr01-sp-min-md) var(--tsifr01-sp-min-xl);
+    color: inherit;
+    font-weight: 600;
+    font-size: var(--tsifr01-fs-tiny);
+    line-height: var(--tsifr01-lh-null);
+    text-decoration: none;
+}
+
+.TSIFR01 .btn-primary {
+    -webkit-transition: border-color .15s ease-out, background-color .15s ease-out, color .15s ease-out;
+    -o-transition: border-color .15s ease-out, background-color .15s ease-out, color .15s ease-out;
+    transition: border-color .15s ease-out, background-color .15s ease-out, color .15s ease-out;
+    border-color: var(--tsifr01-clr-accent);
+    background-color: var(--tsifr01-clr-accent);
+    color: #fff;
+}
+
+.TSIFR01 .btn-primary:hover {
+    border-color: rgb(16, 135, 212);
+    background-color: rgb(16, 135, 212);
+    color: #fff;
+}
+
+.TSIFR01 .btn-secondary {
+    -webkit-transition: border-color .15s ease-out,background-color .15s ease-out,color .15s ease-out;
+    -o-transition: border-color .15s ease-out,background-color .15s ease-out,color .15s ease-out;
+    transition: border-color .15s ease-out,background-color .15s ease-out,color .15s ease-out;
+    border-color: currentColor;
+    color: currentColor;
+}
+
+.TSIFR01 .btn-secondary:hover {
+    border-color: rgb(16, 135, 212);
+    background-color: rgb(16, 135, 212);
+    color: #fff;
+}
+
+.TSIFR01 .notif-block > .c-content,
+.TSIFR01 .notif-block > .r-content {
+    cursor: pointer;
+    border-radius: 5px;
+    background-color: #f3f3f3;
+    padding: 8px 12px;
+    color: #454545;
+    font-size: var(--tsifr01-fs-small);
+}
+
+.TSIFR01 .notif-block > .c-content {
+    cursor: text !important;
+    -webkit-user-select: all;
+       -moz-user-select: all;
+            user-select: all;
+}
+
+.credit {
+    opacity: .75;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    padding-top: var(--tsifr01-sp-base);
+    width: 100%;
+    font-size: 11px;
+    text-align: right;
+}
