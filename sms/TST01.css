@@ -277,8 +277,10 @@
     border-radius: 32px;
     background-color: #ffffff;
     padding: 8px 18px;
+    width: fit-content;
     max-width: 82%;
-    font-size: 14px;
+    font-size: 14px !important;
+    font-family: "Roboto", sans-serif;
 }
 
 .sms-recu + .sms-envoye,
@@ -311,7 +313,7 @@
 
 .TST01 .sms-envoye > .heure {
     right: 10px;
-    color: var(--tst01-clr-text);
+    color: #252525;
 }
 
 .TST01 .app-bottom {
