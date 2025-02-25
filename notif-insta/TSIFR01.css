@@ -264,7 +264,7 @@
     user-select: all;
 }
 
-.credit {
+.TSIFR01 .credit {
     opacity: .75;
     box-sizing: border-box;
     padding-top: var(--tsifr01-sp-base);
