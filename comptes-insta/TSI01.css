@@ -577,6 +577,10 @@
     justify-content: space-between;
     align-items: center;
     opacity: .875;
-    margin-top: var(--tsi01-sp-min-xl);
-    font-size: 12px;
+    margin-top: var(--tsi01-sp-base-sm);
+    font-size: 11px;
+}
+
+.TSIF01 .copy-group p {
+    font-size: 11px !important;
 }
