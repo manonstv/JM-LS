@@ -450,3 +450,7 @@
     margin-top: 48px;
     font-size: 11px;
 }
+
+.TSIF01 .copy-group p {
+    font-size: 11px !important;
+}
