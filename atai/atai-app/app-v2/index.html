@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="https://i.postimg.cc/3NZSBzRk/favicon.png" />
+    <title>ATAI Application</title>
+    <link rel="stylesheet" href="atai-app.css">
+</head>
+<body>
+
+    <style>
+        body {
+            min-height: 100dvh;
+            min-height: 100vh;
+            display: grid;
+            align-content: center;
+            background-color: #ffffff;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+
+    <div class="TSAA">
+        <div class="device02">
+            <div class="phone-speaker"></div>
+            <div class="phone-screen">
+                <input type="radio" id="tab-home" name="tab">
+                <input type="radio" id="tab-profile" name="tab" checked>
+                <input type="radio" id="tab-about" name="tab">
+                <input type="radio" id="tab-friends" name="tab">
+                <input type="radio" id="tab-tchat" name="tab">
+                <div class="atai-app">
+                    <div class="app-header">
+                        <div class="nav-group">
+                            <label for="tab-home"><div class="btn-icon icon-return"></div></label>
+                            <p class="home-link"></p>
+                        </div>
+                        <div class="nav-group">
+                            <div class="btn-icon icon-notif"><p class="notif-number">17</p></div>
+                            <div class="btn-icon icon-mailbox"><p class="mail-number">3</p></div>
+                            <div class="user-settings"><img class="nav-avatar" src="https://zupimages.net/up/25/07/lexe.jpeg" alt="avatar profil"><div class="online-status"></div></div>
+                        </div>
+                    </div>
+                    <div class="app-body">
+                        <div class="page-tab" id="page-home">
+                            <div class="page-content">
+                                <a class="fake-search" href="https://just-married.variousforum.com/f122-atai" target="_blank" id="search-link"></a>
+                                <div class="logo-atai"></div>
+                                <div class="logged"></div>
+                                <label for="tab-profile"><div class="btn btn-primary" id="see-profile"></div></label>
+                            </div>
+                        </div>
+                        <div class="page-tab" id="page-profile">
+                            <div class="page-content">
+                                <div class="section-user">
+                                    <img class="user-avatar" src="https://zupimages.net/up/25/07/lexe.jpeg" alt="avatar">
+                                    <p class="pill user-name">Tsukimi Orikasa</p>
+                                    <p class="user-id">@TsukimiOrikasa</p>
+                                </div>
+                                <div class="section-profile">
+                                    <p class="birth">11 janvier 2087</p>
+                                    <p class="activity">Vendeuse chez God's Pleasure</p>
+                                    <p class="location">Tokyo (Setagaya)</p>
+                                    <p class="status">Célibataire</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="page-tab" id="page-about">
+                            <div class="page-content">
+                                <div class="section-keywords">
+                                    <img class="key-avatar" src="https://zupimages.net/up/25/07/lexe.jpeg" alt="avatar">
+                                    <div class="key-list">
+                                        <p class="pill keyword">Gameuse</p>
+                                        <p class="pill keyword">Curieuse</p>
+                                        <p class="pill keyword">Sportive</p>
+                                        <p class="pill keyword">Cat person</p>
+                                        <p class="pill keyword">Fêtarde</p>
+                                        <p class="pill keyword">Hot 🔥</p>
+                                        <p class="pill keyword">Oiseau d'nuit</p>
+                                        <p class="pill keyword">Netflix & chill</p>
+                                    </div>
+                                </div>
+                                <div class="section-survey">
+                                    <p class="age">28 ans</p>
+                                    <p class="gender">Féminin</p>
+                                    <p class="nationality">Japonaise</p>
+                                    <p class="size">1m72</p>
+                                    <p class="weight">52kg</p>
+                                    <p class="eyes">Bleus</p>
+                                    <p class="tatoo">Non</p>
+                                    <p class="tobacco">Parfois</p>
+                                    <p class="alcohol">Festif</p>
+                                    <p class="drugs">Jamais 👀</p>
+                                    <p class="sports">Fitness</p>
+                                    <p class="pets">Un chat ❤️</p>
+                                </div>
+                                <p class="intro-text" style="text-align: center">J'ai pas besoin d'un prince charmant, juste d'un bon partenaire pour les quêtes secondaires <br> (et les nuits blanches 👀🔥)</p>
+                                <div class="section-like">
+                                    <div class="heading"></div>
+                                    <div class="like-list">
+                                        <p class="pill like">Geeker 🎮</p>
+                                        <p class="pill like">Flirter 🔥</p>
+                                        <p class="pill like">Me défouler 🎯 </p>
+                                        <p class="pill like">Chanter 🎶</p>
+                                        <p class="pill like">Chiller 🎧</p>
+                                        <p class="pill like">Picoler 🍸</p>
+                                        <p class="pill like">Stalker 👩‍💻</p>
+                                        <p class="pill like">Bitcher 🧐</p>
+                                        <p class="pill like">Tirer des plans 🚀</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="page-tab" id="page-friends">
+                            <div class="page-content">
+                                <div class="heading"></div>
+                                <div class="friends-list">
+                                    <div class="friend-card">
+                                        <img class="friend-avatar" src="https://zupimages.net/up/25/09/71sg.jpg" alt="Friend avatar">
+                                        <div class="friend-infos">
+                                            <p class="friend-name">John Doe</p>
+                                            <p class="friend-id">@JohnDoe</p>
+                                        </div>
+                                        <a class="stretched friend-atai" href="#" target="_blank"></a>
+                                    </div>
+                                    <div class="friend-card">
+                                        <img class="friend-avatar" src="https://zupimages.net/up/25/09/71sg.jpg" alt="Friend avatar">
+                                        <div class="friend-infos">
+                                            <p class="friend-name">John Doe</p>
+                                            <p class="friend-id">@JohnDoe</p>
+                                        </div>
+                                        <a class="stretched friend-atai" href="#" target="_blank"></a>
+                                    </div>
+                                    <div class="friend-card">
+                                        <img class="friend-avatar" src="https://zupimages.net/up/25/09/71sg.jpg" alt="Friend avatar">
+                                        <div class="friend-infos">
+                                            <p class="friend-name">John Doe</p>
+                                            <p class="friend-id">@JohnDoe</p>
+                                        </div>
+                                        <a class="stretched friend-atai" href="#" target="_blank"></a>
+                                    </div>
+                                    <div class="friend-card">
+                                        <img class="friend-avatar" src="https://zupimages.net/up/25/09/71sg.jpg" alt="Friend avatar">
+                                        <div class="friend-infos">
+                                            <p class="friend-name">John Doe</p>
+                                            <p class="friend-id">@JohnDoe</p>
+                                        </div>
+                                        <a class="stretched friend-atai" href="#" target="_blank"></a>
+                                    </div>
+                                    <div class="friend-card">
+                                        <img class="friend-avatar" src="https://zupimages.net/up/25/09/71sg.jpg" alt="Friend avatar">
+                                        <div class="friend-infos">
+                                            <p class="friend-name">John Doe</p>
+                                            <p class="friend-id">@JohnDoe</p>
+                                        </div>
+                                        <a class="stretched friend-atai" href="#" target="_blank"></a>
+                                    </div>
+                                    <div class="friend-card">
+                                        <img class="friend-avatar" src="https://zupimages.net/up/25/09/71sg.jpg" alt="Friend avatar">
+                                        <div class="friend-infos">
+                                            <p class="friend-name">John Doe</p>
+                                            <p class="friend-id">@JohnDoe</p>
+                                        </div>
+                                        <a class="stretched friend-atai" href="#" target="_blank"></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="page-tab" id="page-tchat">
+                            <div class="page-content">
+                                <div class="tchat-heading">
+                                    <a class="btn btn-primary" href="#" target="_blank" id="btn-singlechat"></a>
+                                    <a class="btn btn-primary" href="#" target="_blank" id="btn-tchat"></a>
+                                </div>
+                                <div class="tchat-list">
+                                    <div class="tchat-card">
+                                        <img class="friend-avatar" src="https://zupimages.net/up/25/09/71sg.jpg" alt="Friend avatar">
+                                        <div class="tchat-infos">
+                                            <p class="friend-id">@JohnDoe</p>
+                                            <p class="tchat-date">Session juil. 2115</p>
+                                        </div>
+                                        <a class="stretched tchat-link" href="#" target="_blank"></a>
+                                    </div>
+                                    <div class="tchat-card">
+                                        <img class="friend-avatar" src="https://zupimages.net/up/25/09/71sg.jpg" alt="Friend avatar">
+                                        <div class="tchat-infos">
+                                            <p class="friend-id">@JohnDoe</p>
+                                            <p class="tchat-date">Session juil. 2115</p>
+                                        </div>
+                                        <a class="stretched tchat-link" href="#" target="_blank"></a>
+                                    </div>
+                                    <div class="tchat-card">
+                                        <img class="friend-avatar" src="https://zupimages.net/up/25/09/71sg.jpg" alt="Friend avatar">
+                                        <div class="tchat-infos">
+                                            <p class="friend-id">@JohnDoe</p>
+                                            <p class="tchat-date">Session juil. 2115</p>
+                                        </div>
+                                        <a class="stretched tchat-link" href="#" target="_blank"></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="app-footer">
+                        <label for="tab-home"><div class="btn-icon icon-home"></div></label>
+                        <label for="tab-profile"><div class="btn-icon icon-profile"></div></label>
+                        <label for="tab-about"><div class="btn-icon icon-about"></div></label>
+                        <label for="tab-friends"><div class="btn-icon icon-friends"></div></label>
+                        <label for="tab-tchat"><div class="btn-icon icon-tchat"></div></label>
+                    </div>
+                </div>
+            </div>
+            <div class="phone-home"></div>
+        </div>
+        <p class="credit">Code &copy; <a href="https://just-married.variousforum.com/u3777">Tsuki de JM!</a></p>
+    </div>
+
+</body>
+</html>
