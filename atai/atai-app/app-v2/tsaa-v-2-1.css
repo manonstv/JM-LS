@@ -1,0 +1,1163 @@
+/*
+* Version : v.2.1
+* Projet : profil ATAI
+* Propriétaire : just-married.variousforum.com
+* Crédits : code par Tuski de Just Married !
+*/
+
+/*  Police custom pour le texte "ATAI" */
+/* @font-face {
+  font-style: normal;
+  font-weight: normal;
+  src: url('/assets/Abang.woff') format('woff');
+  font-family: 'Abang';
+  font-display: swap;
+} */
+
+/* ==================================================
+    VARIABLES
+===================================================== */
+
+:root {
+    /*  Couleurs */
+    --tsaa-color-primary: #a1265a;
+    --tsaa-color-secondary: #F1BBD5;
+    --tsaa-color-accent: #ffe3f1;
+    --tsaa-color-light: #fafafa;
+    --tsaa-color-dark: #490a24;
+    --tsaa-color-light-gray: #f9f9f9;
+    --tsaa-color-medium-gray: #cccccc;
+    /*  Couleurs textes */
+    --tsaa-color-text: var(--tsaa-color-light);
+    --tsaa-text-ghosted: .875;
+    /*  Styles bordures */
+    --tsaa-color-nav-avatar-border: 2px solid var(--tsaa-color-light);
+    --tsaa-color-user-avatar-border: 3px solid var(--tsaa-color-light);
+    --tsaa-color-key-avatar-border: 3px solid var(--tsaa-color-light);
+    --tsaa-color-user-infos-border: 2px solid var(--tsaa-color-secondary);
+    --tsaa-color-section-survey-border: 2px solid var(--tsaa-color-secondary);
+    --tsaa-color-fake-border: rgb(241 187 213 / 55%);
+    --tsaa-color-fake-border-hover: rgb(241 187 213 / 85%);
+    /*  Styles des boutons */
+    --tsaa-btn-color: var(--tsaa-color-dark);
+    --tsaa-btn-bg-color: var(--tsaa-app-pill-bg);
+    --tsaa-btn-bg-color-hover: var(--tsaa-color-accent);
+    --tsaa-btn-shadow: rgba(0, 0, 0, 0.1) 2px 2px 5px;
+    --tsaa-btn-shadow-hover: rgba(0, 0, 0, 0.2) 2px 2px 10px;
+    --tsaa-btn-radius: 8px;
+    --tsaa-btn-disabled-color: #fefefeb0;
+    /*  Styles sélection */
+    --tsaa-selection-color: var(--tsaa-color-primary);
+    --tsaa-selection-bg: var(--tsaa-color-secondary);
+    /*  Styles ascenseur */
+    --tsaa-scrollbar-width: thin;
+    --tsaa-scrollbar-color: var(--tsaa-color-light-gray);
+    --tsaa-scrollbar-bg: transparent;
+    /*  Styles téléphone */
+    --tsaa-device-bg-color: var(--tsaa-color-light-gray);
+    --tsaa-device-width: 440px;
+    --tsaa-device-height: 800px;
+    --tsaa-device-gap: 28px;
+    --tsaa-device-border: 2px solid var(--tsaa-color-medium-gray);
+    --tsaa-device-radius: 20px;
+    --tsaa-device-shadow: rgba(0,0,0,.1) 2px 2px 5px;
+    --tsaa-device-padding: 28px 12px;
+    --tsaa-screen-bg-color: var(--tsaa-primary-color);
+    --tsaa-screen-bg-image: linear-gradient(35deg, #a1265a, #a62b5f, #ac3165, #b0376a, #b53e70, #b94475, #b9507c, #b85b82);
+    /*  Styles app */
+    --tsaa-app-nav-height: 60px;
+    --tsaa-app-inner-gap: 4px;
+    --tsaa-app-notif-bg: #ffffff;
+    --tsaa-app-online-bg: #20c71d;
+    --tsaa-app-online-shadow: rgba(0,0,0,.35) -1px 1px 2px;
+    --tsaa-app-bg-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.dev/svgjs' width='900' height='1400' preserveAspectRatio='none' viewBox='0 0 900 1400'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1021%26quot%3b)' fill='none'%3e%3crect width='900' height='1400' x='0' y='0' fill='rgba(173%2c 65%2c 111%2c 1)'%3e%3c/rect%3e%3cpath d='M0%2c613.059C118.494%2c624.417%2c248.702%2c605.218%2c339.415%2c528.14C427.472%2c453.319%2c414.781%2c316.205%2c469.285%2c214.315C529.039%2c102.611%2c673.519%2c29.811%2c673.753%2c-96.871C673.987%2c-223.218%2c573.922%2c-335.149%2c470.436%2c-407.635C376.233%2c-473.618%2c252.3%2c-454.953%2c138.523%2c-471.766C42.176%2c-486.003%2c-50.589%2c-515.951%2c-146.459%2c-498.794C-249.94%2c-480.274%2c-349.488%2c-440.888%2c-427.535%2c-370.461C-511.819%2c-294.406%2c-585.553%2c-198.874%2c-603.125%2c-86.716C-620.781%2c25.978%2c-577.776%2c138.79%2c-522.993%2c238.843C-470.885%2c334.011%2c-388.265%2c403.713%2c-300.027%2c466.85C-207.68%2c532.927%2c-113.034%2c602.225%2c0%2c613.059' fill='%23a43e69'%3e%3c/path%3e%3cpath d='M900 2040.594C1025.448 2067.392 1171.291 2058.277 1271.933 1978.738 1371.282 1900.22 1366.024 1751.911 1413.705 1634.601 1458.877 1523.464 1566.855 1425.216 1544.848 1307.285 1522.851 1189.408 1378.435 1143.904 1304.519 1049.483 1225.092 948.0219999999999 1211.388 790.254 1095.694 733.529 978.149 675.896 834.002 712.041 711.738 758.839 595.136 803.47 494.8 885.19 426.471 989.685 363.082 1086.627 348.817 1204.405 344.696 1320.159 340.919 1426.275 354.331 1532.651 403.798 1626.608 451.595 1717.394 539.082 1773.286 617.863 1839.0140000000001 708.4490000000001 1914.591 784.63 2015.9479999999999 900 2040.594' fill='%23b64475'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1021'%3e%3crect width='900' height='1400' fill='white'%3e%3c/rect%3e%3c/mask%3e%3c/defs%3e%3c/svg%3e");
+    /*  Styles des bulles */
+    --tsaa-app-pill-color: var(--tsaa-color-dark);
+    --tsaa-app-pill-bg: var(--tsaa-color-light);
+    --tsaa-app-pill-shadow: var(--tsaa-device-shadow);
+    /*  Styles cards */
+    --tsaa-friend-bg-color: transparent;
+    --tsaa-friend-bg-hover: #d16894;
+}
+
+/* ==================================================
+    NORMALISATION DES STYLES
+===================================================== */
+
+/*  Custom reset
+===================================================== */
+
+.TSAA {
+    margin: 8px;
+}
+
+/*  Normalise typographie */
+.TSAA * {
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    color: var(--tsaa-color-text);
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+/*  Normalise paragraphes */
+.TSAA p {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+/*  Normalise liens */
+.TSAA a {
+    color: inherit;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+/*  Normalise images */
+.TSAA img {
+    display: block;
+    background-color: var(--tsaa-color-light);
+    width: 100%;
+    overflow: hidden;
+}
+
+/*  Transforme icons en boutons */
+.TSAA label {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*  Invisibilise boutons tab */
+.TSAA input {
+    display: none;
+}
+
+/*  Personnalisation de la sélection */
+.TSAA ::selection {
+    background-color: var(--tsaa-selection-bg);
+    color: var(--tsaa-selection-color);
+}
+
+/*  Utilitaires
+===================================================== */
+
+/*  Liens 'couvrants' */
+.TSAA a.stretched {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.TSAA a.stretched::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    content: '';
+}
+
+/*  Bulles */
+.TSAA .pill {
+    box-shadow: var(--tsaa-app-pill-shadow);
+    background-color: var(--tsaa-app-pill-bg);
+    color: var(--tsaa-app-pill-color);
+}
+
+/*  Ascenseur */
+.TSAA .scroll {
+
+}
+
+/* ==================================================
+    BOUTONS & ICONS
+===================================================== */
+
+/*  Styles des boutons
+===================================================== */
+
+.TSAA .btn {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: var(--tsaa-btn-shadow);
+    border-width: 2px;
+    border-style: solid;
+    border-radius: var(--tsaa-btn-radius);
+    font-weight: 600;
+    text-align: center;
+}
+
+.TSAA .btn-primary {
+    transition: background-color .15s ease-out, border-color .15s ease-out, box-shadow .15s ease-out;
+    border-color: var(--tsaa-btn-bg-color);
+    background-color: var(--tsaa-btn-bg-color);
+    padding: 6px 20px;
+    color: var(--tsaa-btn-color);
+    font-size: 14px !important;
+}
+
+.TSAA .btn-primary:hover {
+    box-shadow: var(--tsaa-btn-shadow-hover);
+    border-color: var(--tsaa-btn-bg-color-hover);
+    background-color: var(--tsaa-btn-bg-color-hover);
+}
+
+/*  Styles des icons
+===================================================== */
+
+/*  Styles globaux des icônes */
+.TSAA .btn-icon {
+    display: inline-flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    transition: background-image .15s ease-out;
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
+}
+
+/*  Nombre des notifications */
+.TSAA .btn-icon > p {
+    display: flex;
+    position: absolute;
+    right: -9px;
+    bottom: -3px;
+    justify-content: center;
+    align-items: center;
+    z-index: 0;
+    cursor: default;
+    border: 2px solid var(--tsaa-app-notif-bg);
+    border-radius: 50%;
+    background-color: var(--tsaa-app-notif-bg);
+    width: 16px;
+    height: 16px;
+    overflow: hidden;
+    color: var(--tsaa-color-primary);
+    font-weight: 500;
+    font-size: 9px !important;
+    line-height: 0;
+}
+
+/*  Icône de retour en arrière - flêche (état par défaut) */
+.TSAA .icon-return {
+    opacity: 1;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath stroke='none' d='M0 0h24v24H0z' fill='none'/%3E%3Cpath d='M5 12l14 0' /%3E%3Cpath d='M5 12l4 4' /%3E%3Cpath d='M5 12l4 -4' /%3E%3C/svg%3E");
+}
+
+/*  Icône notifications (état par défaut) */
+.TSAA .icon-notif {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='1.25' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath stroke='none' d='M0 0h24v24H0z' fill='none'/%3E%3Cpath d='M15 17h-11a4 4 0 0 0 2 -3v-3a7 7 0 0 1 4 -6a2 2 0 1 1 4 0a7 7 0 0 1 4 6v1.5' /%3E%3Cpath d='M9 17v1a3 3 0 0 0 6 0v-1' /%3E%3Cpath d='M19 16v3' /%3E%3Cpath d='M19 22v.01' /%3E%3C/svg%3E");
+}
+
+/*  Icône messagerie (état par défaut) */
+.TSAA .icon-mailbox {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='1.25' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath stroke='none' d='M0 0h24v24H0z' fill='none'/%3E%3Cpath d='M15 19h-10a2 2 0 0 1 -2 -2v-10a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v5.5' /%3E%3Cpath d='M3 7l9 6l9 -6' /%3E%3Cpath d='M19 16v3' /%3E%3Cpath d='M19 22v.01' /%3E%3C/svg%3E");
+}
+
+/*  Icône accueil (état par défaut) */
+.TSAA .icon-home {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath stroke='none' d='M0 0h24v24H0z' fill='none'/%3E%3Cpath d='M5 12l-2 0l9 -9l9 9l-2 0' /%3E%3Cpath d='M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7' /%3E%3Cpath d='M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6' /%3E%3C/svg%3E");
+}
+
+/*  Icône accueil (état au survol/activé) */
+.TSAA .icon-home:hover,
+.TSAA input#tab-home:checked ~ .atai-app .app-footer label[for="tab-home"] .icon-home  {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='%23ffffff'%3E%3Cpath stroke='none' d='M0 0h24v24H0z' fill='none'/%3E%3Cpath d='M12.707 2.293l9 9c.63 .63 .184 1.707 -.707 1.707h-1v6a3 3 0 0 1 -3 3h-1v-7a3 3 0 0 0 -2.824 -2.995l-.176 -.005h-2a3 3 0 0 0 -3 3v7h-1a3 3 0 0 1 -3 -3v-6h-1c-.89 0 -1.337 -1.077 -.707 -1.707l9 -9a1 1 0 0 1 1.414 0m.293 11.707a1 1 0 0 1 1 1v7h-4v-7a1 1 0 0 1 .883 -.993l.117 -.007z' /%3E%3C/svg%3E");
+}
+
+/*  Icône profil (état par défaut) */
+.TSAA .icon-profile {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath stroke='none' d='M0 0h24v24H0z' fill='none'/%3E%3Cpath d='M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0' /%3E%3Cpath d='M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2' /%3E%3C/svg%3E");
+}
+
+/*  Icône profil (état au survol/activé) */
+.TSAA .icon-profile:hover,
+.TSAA input#tab-profile:checked ~ .atai-app .app-footer label[for="tab-profile"] .icon-profile {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='%23ffffff'%3E%3Cpath stroke='none' d='M0 0h24v24H0z' fill='none'/%3E%3Cpath d='M12 2a5 5 0 1 1 -5 5l.005 -.217a5 5 0 0 1 4.995 -4.783z' /%3E%3Cpath d='M14 14a5 5 0 0 1 5 5v1a2 2 0 0 1 -2 2h-10a2 2 0 0 1 -2 -2v-1a5 5 0 0 1 5 -5h4z' /%3E%3C/svg%3E");
+}
+
+/*  Icône intérêts (état par défaut) */
+.TSAA .icon-about {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath stroke='none' d='M0 0h24v24H0z' fill='none'/%3E%3Cpath d='M3 19a9 9 0 0 1 9 0a9 9 0 0 1 9 0' /%3E%3Cpath d='M3 6a9 9 0 0 1 9 0a9 9 0 0 1 9 0' /%3E%3Cpath d='M3 6l0 13' /%3E%3Cpath d='M12 6l0 13' /%3E%3Cpath d='M21 6l0 13' /%3E%3C/svg%3E");
+}
+
+/*  Icône intérêts (état au survol/activé) */
+.TSAA .icon-about:hover,
+.TSAA input#tab-about:checked ~ .atai-app .app-footer label[for="tab-about"] .icon-about {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='%23ffffff'%3E%3Cpath stroke='none' d='M0 0h24v24H0z' fill='none'/%3E%3Cpath d='M12.088 4.82a10 10 0 0 1 9.412 .314a1 1 0 0 1 .493 .748l.007 .118v13a1 1 0 0 1 -1.5 .866a8 8 0 0 0 -8 0a1 1 0 0 1 -1 0a8 8 0 0 0 -7.733 -.148l-.327 .18l-.103 .044l-.049 .016l-.11 .026l-.061 .01l-.117 .006h-.042l-.11 -.012l-.077 -.014l-.108 -.032l-.126 -.056l-.095 -.056l-.089 -.067l-.06 -.056l-.073 -.082l-.064 -.089l-.022 -.036l-.032 -.06l-.044 -.103l-.016 -.049l-.026 -.11l-.01 -.061l-.004 -.049l-.002 -.068v-13a1 1 0 0 1 .5 -.866a10 10 0 0 1 9.412 -.314l.088 .044l.088 -.044z' /%3E%3C/svg%3E");
+}
+
+/*  Icône amis (état par défaut) */
+.TSAA .icon-friends {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath stroke='none' d='M0 0h24v24H0z' fill='none'/%3E%3Cpath d='M12 17.75l-6.172 3.245l1.179 -6.873l-5 -4.867l6.9 -1l3.086 -6.253l3.086 6.253l6.9 1l-5 4.867l1.179 6.873z' /%3E%3C/svg%3E");
+}
+
+/*  Icône amis (état au survol/activé) */
+.TSAA .icon-friends:hover,
+.TSAA input#tab-friends:checked ~ .atai-app .app-footer label[for="tab-friends"] .icon-friends {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='%23ffffff'%3E%3Cpath stroke='none' d='M0 0h24v24H0z' fill='none'/%3E%3Cpath d='M8.243 7.34l-6.38 .925l-.113 .023a1 1 0 0 0 -.44 1.684l4.622 4.499l-1.09 6.355l-.013 .11a1 1 0 0 0 1.464 .944l5.706 -3l5.693 3l.1 .046a1 1 0 0 0 1.352 -1.1l-1.091 -6.355l4.624 -4.5l.078 -.085a1 1 0 0 0 -.633 -1.62l-6.38 -.926l-2.852 -5.78a1 1 0 0 0 -1.794 0l-2.853 5.78z' /%3E%3C/svg%3E");
+}
+
+/*  Icône tchat (état par défaut) */
+.TSAA .icon-tchat {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath stroke='none' d='M0 0h24v24H0z' fill='none'/%3E%3Cpath d='M8 9h8' /%3E%3Cpath d='M8 13h6' /%3E%3Cpath d='M18 4a3 3 0 0 1 3 3v8a3 3 0 0 1 -3 3h-5l-5 3v-3h-2a3 3 0 0 1 -3 -3v-8a3 3 0 0 1 3 -3h12z' /%3E%3C/svg%3E");
+}
+
+/*  Icône tchat (état au survol/activé) */
+.TSAA .icon-tchat:hover,
+.TSAA input#tab-tchat:checked ~ .atai-app .app-footer label[for="tab-tchat"] .icon-tchat {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='%23ffffff'%3E%3Cpath stroke='none' d='M0 0h24v24H0z' fill='none'/%3E%3Cpath d='M18 3a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-4.724l-4.762 2.857a1 1 0 0 1 -1.508 -.743l-.006 -.114v-2h-1a4 4 0 0 1 -3.995 -3.8l-.005 -.2v-8a4 4 0 0 1 4 -4zm-4 9h-6a1 1 0 0 0 0 2h6a1 1 0 0 0 0 -2m2 -4h-8a1 1 0 1 0 0 2h8a1 1 0 0 0 0 -2' /%3E%3C/svg%3E");
+}
+
+/* ==================================================
+    APPARENCE DU TELEPHONE
+===================================================== */
+
+/*  Téléphone mobile */
+.TSAA .device02 {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    row-gap: var(--tsaa-device-gap);
+    justify-items: center;
+    margin: 0 auto;
+    box-shadow: var(--tsaa-device-shadow);
+    border: var(--tsaa-device-border);
+    border-radius: var(--tsaa-device-radius);
+    background-color: var(--tsaa-device-bg-color);
+    padding: var(--tsaa-device-padding);
+    width: 100%;
+    max-width: var(--tsaa-device-width);
+    height: var(--tsaa-device-height);
+    overflow: hidden;
+}
+
+/*  Micro du téléphone */
+.TSAA .device02 > .phone-speaker {
+    border: 1px solid var(--tsaa-color-medium-gray);
+    border-radius: 36px;
+    width: 50px;
+    height: 6px;
+}
+
+/*  Ecran du téléphone */
+.TSAA .device02 > .phone-screen {
+    cursor: default;
+    background-image: var(--tsaa-app-bg-image);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: var(--tsaa-color-primary);
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+/*  Bouton du téléphone */
+.TSAA .device02 > .phone-home {
+    border: 1px solid var(--tsaa-color-medium-gray);
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+}
+
+/* ==================================================
+    STRUCTURE DE L'APP
+===================================================== */
+
+/*  Grille de l'app
+===================================================== */
+
+/*  Structure de la grille */
+.TSAA .atai-app {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    row-gap: var(--tsaa-app-inner-gap);
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+/*  Navigation (haut et bas) */
+.TSAA .app-header, .TSAA .app-footer {
+    display: flex;
+    align-items: center;
+    background-color: var(--tsaa-color-primary);
+    padding: 16px 32px;
+    width: 100%;
+    height: var(--tsaa-app-nav-height);
+}
+
+/*  Navigation (header)
+===================================================== */
+
+/*  Navigation supérieure */
+.TSAA .app-header {
+    justify-content: space-between;
+    gap: 16px;
+}
+
+/*  Groupes de menu gauche + droit */
+.TSAA .app-header > .nav-group {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+}
+
+/*  Contenu du lien d'entête */
+.TSAA .app-header .home-link::after {
+    display: inline-flex;
+    content: "Accueil";
+    font-weight: 600;
+    font-size: 15px !important;
+}
+
+/*  Groupe avatar + statut */
+.TSAA .user-settings {
+    position: relative;
+    cursor: pointer;
+}
+
+/*  Avatar navigation */
+.TSAA .user-settings > img.nav-avatar {
+    border: var(--tsaa-color-nav-avatar-border);
+    border-radius: 50%;
+    width: 28px;
+    height: 28px;
+    object-fit: cover;
+}
+
+/*  Statut en ligne */
+.TSAA .user-settings > .online-status {
+    display: flex;
+    position: absolute;
+    top: -1px;
+    right: -4px;
+    justify-content: center;
+    align-items: center;
+    z-index: 0;
+    cursor: default;
+    box-shadow: var(--tsaa-app-online-shadow);
+    border-radius: 50%;
+    background-color: var(--tsaa-app-online-bg);
+    width: 11px;
+    height: 11px;
+}
+
+/*  Navigation (footer)
+===================================================== */
+
+/*  Navigation inférieure */
+.TSAA .app-footer {
+    justify-content: center;
+    gap: 32px;
+}
+
+/* ==================================================
+    STRUCTURE & CONTENU DES PAGES
+===================================================== */
+
+/*  Corps de l'app */
+.TSAA .atai-app > .app-body {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+/*  Gestion du switch d'une page à l'autre
+===================================================== */
+
+/*  Déclenche le passage au clic des boutons de la navigation */
+.TSAA input#tab-home:checked ~ .atai-app .app-body #page-home .page-content,
+.TSAA input#tab-profile:checked ~ .atai-app .app-body #page-profile .page-content,
+.TSAA input#tab-about:checked ~ .atai-app .app-body #page-about .page-content,
+.TSAA input#tab-friends:checked ~ .atai-app .app-body #page-friends .page-content,
+.TSAA input#tab-tchat:checked ~ .atai-app .app-body #page-tchat .page-content {
+    transform: translate(0%);
+    opacity: 1;
+    pointer-events: all;
+}
+
+/*  Structure du contenu d'une page */
+.TSAA .page-content {
+    display: flex;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    flex-direction: column;
+    justify-content: flex-start;
+    transform: translate(100%);
+    opacity: 0;
+    transition: .5s;
+    box-sizing: border-box;
+    padding: 32px;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    scrollbar-color: var(--tsaa-scrollbar-color) var(--tsaa-scrollbar-bg);
+    scrollbar-width: var(--tsaa-scrollbar-width);
+    pointer-events: none;
+}
+
+/*  Déclenche l'apparition du bouton retour en arrière */
+.TSAA input:checked ~ .atai-app .nav-group .icon-return {
+    opacity: 1;
+    transition: opacity .15s ease-out;
+}
+
+/*  Invisibilise le bouton retour en arrière sur la première page */
+.TSAA input#tab-home:checked ~ .atai-app .nav-group .icon-return {
+    opacity: 0;
+    transition: opacity .15s ease-out;
+}
+
+/*  Gère le décalage du texte "Accueil" */
+.TSAA input:checked ~ .atai-app .nav-group .home-link {
+    transition: margin .25s ease-out;
+    margin-left: unset;
+}
+.TSAA input#tab-home:checked ~ .atai-app .nav-group .home-link {
+    transition: margin .25s ease-out;
+    margin-left: -38px;
+}
+
+.TSAA input#tab-home:checked ~ .atai-app .nav-group .home-link::after {
+    content: "Bienvenu(e)";
+}
+
+.TSAA input#tab-profile:checked ~ .atai-app .nav-group .home-link::after {
+    content: "Profil";
+}
+
+.TSAA input#tab-about:checked ~ .atai-app .nav-group .home-link::after {
+    content: "A propos";
+}
+
+.TSAA input#tab-friends:checked ~ .atai-app .nav-group .home-link::after {
+    content: "Répertoire";
+}
+
+.TSAA input#tab-tchat:checked ~ .atai-app .nav-group .home-link::after {
+    content: "Messagerie ATAI";
+}
+
+/* ==================================================
+    PAGE D'ACCUEIL (HOME)
+===================================================== */
+
+/*  Faux champ de recherche */
+.TSAA #page-home a#search-link {
+    display: block;
+    position: relative;
+    transition: color .15s ease-out, border-color .15s ease-out;
+    margin-inline: auto;
+    border: 2px solid var(--tsaa-color-fake-border);
+    border-radius: 16px;
+    background: transparent;
+    padding: 4px 16px;
+    width: 80%;
+    color: var(--tsaa-color-fake-border);
+}
+.TSAA #page-home a#search-link::after {
+    content: "Rechercher un profil...";
+}
+.TSAA #page-home a#search-link:hover {
+    border: 2px solid var(--tsaa-color-fake-border-hover);
+    color: var(--tsaa-color-fake-border-hover);
+}
+
+/*  Logo ATAI */
+.TSAA #page-home .logo-atai {
+    margin-inline: auto;
+    margin-block: 72px 16px;
+    background-image: url("https://zupimages.net/up/25/09/fj5h.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    width: 200px;
+    height: 200px;
+}
+
+/*  Texte automatique du statut connecté(e) */
+.TSAA #page-home .logged::before {
+    display: flex;
+    justify-content: center;
+    opacity: .5;
+    margin-bottom: 16px;
+    content: "Connecté(e)";
+    font-weight: 500;
+    font-size: 14px !important;
+}
+
+/*  Texte automatique du bouton "Voir le profil" */
+.TSAA #page-home .btn-primary::before {
+    margin-right: 6px;
+    content: "Voir le profil";
+}
+
+.TSAA #page-home .btn-primary::after {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='rgb(73 10 36)' stroke-width='1.25' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath stroke='none' d='M0 0h24v24H0z' fill='none'/%3E%3Cpath d='M5 12l14 0' /%3E%3Cpath d='M15 16l4 -4' /%3E%3Cpath d='M15 8l4 4' /%3E%3C/svg%3E");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 18px;
+    height: 18px;
+    content: "";
+}
+
+/* ==================================================
+    PAGE DU PROFIL (PROFILE)
+===================================================== */
+
+/*  Centre le contenu */
+.TSAA #page-profile .page-content {
+    justify-content: center;
+}
+
+/*  Section utilisateur
+===================================================== */
+
+/*  Partie avatar + nom + id */
+.TSAA #page-profile .section-user {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 32px;
+}
+
+/*  Avatar ATAI de l'utilisateur */
+.TSAA #page-profile img.user-avatar {
+    margin-inline: auto;
+    border: var(--tsaa-color-user-avatar-border);
+    border-radius: 50%;
+    aspect-ratio: 1/1;
+    width: 125px;
+    height: 125px;
+}
+
+/*  Nom ATAI de l'utilisateur */
+.TSAA #page-profile .user-name {
+    margin-top: 16px;
+    margin-bottom: 8px;
+    border-radius: 16px;
+    padding: 2px 24px;
+    font-weight: 600;
+    font-size: 16px !important;
+}
+
+/*  ID ATAI de l'utilisateur */
+.TSAA #page-profile .user-id {
+    opacity: var(--tsaa-text-ghosted);
+    color: var(--tsaa-color-text);
+    font-size: 14px !important;
+    letter-spacing: .25px;
+}
+
+/*  Section informations
+===================================================== */
+
+/*  Partie infos (naissance, etc.) */
+.TSAA #page-profile .section-profile {
+    margin-inline: auto;
+    border: var(--tsaa-color-user-infos-border);
+    border-radius: 5px;
+    padding: 12px 16px;
+    width: 100%;
+    font-size: 14px !important;
+}
+
+/*  Styles des paragraphes */
+.TSAA #page-profile .section-profile > p {
+    display: flex;
+    position: relative;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 4px;
+}
+
+/*  Texte de début de ligne automatique */
+.TSAA #page-profile .section-profile > p::before {
+    margin-right: 4px;
+    font-weight: 700;
+}
+.TSAA #page-profile .section-profile > p.birth::before {
+    content: "Naissance :";
+}
+.TSAA #page-profile .section-profile > p.activity::before {
+    content: "Activité :";
+}
+.TSAA #page-profile .section-profile > p.location::before {
+    content: "Localisation :";
+}
+.TSAA #page-profile .section-profile > p.status::before {
+    content: "Statut marital :";
+}
+
+/* ==================================================
+    PAGE DE PRESENTATION (ABOUT)
+===================================================== */
+
+/*  Section keywords
+===================================================== */
+
+/*  Partie avatar + mots-clefs */
+.TSAA #page-about .section-keywords {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+    margin-bottom: 38px;
+}
+
+/*  Avatar */
+.TSAA #page-about img.key-avatar {
+    border: var(--tsaa-color-key-avatar-border);
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+}
+
+/*  Liste des mots-clefs */
+.TSAA #page-about .key-list {
+    display: flex;
+    flex: 1;
+    flex-wrap: wrap;
+    gap: 6px;
+    max-height: 85px;
+    overflow: auto;
+    scrollbar-color: var(--tsaa-scrollbar-color) var(--tsaa-scrollbar-bg);
+    scrollbar-width: var(--tsaa-scrollbar-width);
+}
+
+/*  Mot-clef */
+.TSAA #page-about .keyword {
+    border-radius: 5px;
+    padding: 2px 8px;
+    width: fit-content;
+    font-size: 12px !important;
+}
+
+/*  Section survey
+===================================================== */
+
+/*  Partie questionnaire */
+.TSAA #page-about .section-survey {
+    column-count: 2;
+    margin-bottom: 38px;
+    margin-inline: auto;
+    border: var(--tsaa-color-section-survey-border);
+    border-radius: 5px;
+    padding: 12px 16px;
+    width: 100%;
+    font-size: 14px !important;
+    line-height: 1.7;
+}
+
+/*  Paragraphes du questionnaire */
+.TSAA #page-about .section-survey > p {
+    display: flex;
+    position: relative;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 4px;
+    font-size: 14px !important;
+    hyphens: auto;
+    word-break: break-word;
+}
+
+/*  Texte automatique des paragraphes */
+.TSAA #page-about .section-survey > p::before {
+    margin-right: 4px;
+    font-weight: 700;
+}
+.TSAA #page-about .section-survey > p.age::before {
+    content: "Âge :";
+}
+.TSAA #page-about .section-survey > p.gender::before {
+    content: "Genre :";
+}
+.TSAA #page-about .section-survey > p.nationality::before {
+    content: "Origines :";
+}
+.TSAA #page-about .section-survey > p.size::before {
+    content: "Taille :";
+}
+.TSAA #page-about .section-survey > p.weight::before {
+    content: "Poids :";
+}
+.TSAA #page-about .section-survey > p.eyes::before {
+    content: "Yeux :";
+}
+.TSAA #page-about .section-survey > p.tatoo::before {
+    content: "Tatouage(s) :";
+}
+.TSAA #page-about .section-survey > p.tobacco::before {
+    content: "Tabac :";
+}
+.TSAA #page-about .section-survey > p.alcohol::before {
+    content: "Alcool :";
+}
+.TSAA #page-about .section-survey > p.drugs::before {
+    content: "Drogues :";
+}
+.TSAA #page-about .section-survey > p.sports::before {
+    content: "Sport :";
+}
+.TSAA #page-about .section-survey > p.pets::before {
+    content: "Animaux :";
+}
+
+/*  Texte de présentation personnalisé
+===================================================== */
+
+/*  Encadré du texte personnalisé / disquette */
+.TSAA #page-about .intro-text {
+    position: relative;
+    margin-bottom: 32px;
+    box-shadow: var(--tsaa-app-pill-shadow);
+    border-radius: 16px;
+    background-color: var(--tsaa-color-light);
+    padding: 12px;
+    color: #252525;
+    font-size: 14px !important;
+}
+
+/* Effet bulle */
+.TSAA #page-about .intro-text::before {
+    position: absolute;
+    top: -8px;
+    left: 50%;
+    transform: translate(-50%);
+    border-right: 8px solid transparent;
+    border-bottom: 8px solid var(--tsaa-color-light);
+    border-left: 8px solid transparent;
+    content: "";
+}
+
+/*  Section like
+===================================================== */
+
+/*  Texte automatique "Ce que j'aime" */
+.TSAA #page-about .heading {
+    margin-bottom: 20px;
+    width: 100%;
+    font-weight: 600;
+    font-size: 18px !important;
+    text-align: center;
+}
+.TSAA #page-about .heading::before {
+    content: "Ce que j'aime";
+}
+.TSAA #page-about .heading::after {
+    display: block;
+    margin-top: 6px;
+    margin-inline: auto;
+    background-color: var(--tsaa-color-light);
+    width: 75%;
+    height: 2px;
+    content: "";
+}
+
+/*  Liste des intérêts */
+.TSAA #page-about .like-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+}
+
+/*  Mot-clef */
+.TSAA #page-about .like-list > p.like {
+    border-radius: 5px;
+    padding: 2px 14px;
+    width: fit-content;
+    font-size: 12px !important;
+}
+
+/* ==================================================
+    PAGE DU REPERTOIRE DES AMIS (FRIENDS)
+===================================================== */
+
+/*  Heading de la liste de contacts */
+.TSAA #page-friends .heading {
+    margin-bottom: 18px;
+    border-radius: 8px;
+    background-color: var(--tsaa-color-light);
+    padding: 8px;
+    width: 100%;
+    color: var(--tsaa-color-dark);
+    font-weight: 600;
+    font-size: 16px !important;
+    text-align: center;
+}
+
+/*  Texte automatique "Contact favoris" */
+.TSAA #page-friends .heading::before {
+    content: "Contacts favoris";
+}
+
+/*  Carte de contact */
+.TSAA #page-friends .friend-card {
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    transition: background-color .15s ease-out;
+    margin-block: 8px;
+    border-radius: 5px;
+    background-color: var(--tsaa-friend-bg-color);
+    padding: 10px;
+    width: 100%;
+}
+.TSAA #page-friends .friend-card:hover {
+    background-color: var(--tsaa-friend-bg-hover);
+}
+
+/*  Avatar du contact */
+.TSAA #page-friends img.friend-avatar {
+    border: var(--tsaa-color-nav-avatar-border);
+    border-radius: 5px;
+    width: 55px;
+    height: 55px;
+    object-fit: cover;
+}
+
+/*  Infos du contact */
+.TSAA #page-friends .friend-infos {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    gap: 2px;
+}
+
+/*  Empêche le dépassement */
+.TSAA #page-friends .friend-infos > p.friend-name,
+.TSAA #page-friends .friend-infos > p.friend-id {
+    display: -webkit-box;
+    text-wrap: 16px;
+    -webkit-box-orient: vertical;
+    max-width: 100%;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+}
+
+/*  Nom du contact */
+.TSAA #page-friends .friend-infos > p.friend-name {
+    font-weight: 600;
+    font-size: 14px !important;
+}
+
+/*  ID ATAI du contact */
+.TSAA #page-friends .friend-infos > p.friend-id {
+    opacity: .75;
+    font-size: 12px !important;
+}
+
+/*  Liens vers le profil ATAI du contact */
+.TSAA #page-friends a.friend-atai {
+    display: block;
+    opacity: .875;
+    transition: background-image .15s ease-out;
+    border: 3px solid var(--tsaa-color-primary);
+    border-radius: 50%;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%490a24' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath stroke='none' d='M0 0h24v24H0z' fill='none'/%3E%3Cpath d='M5 12l5 5l10 -10' /%3E%3C/svg%3E");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: var(--tsaa-color-primary);
+    width: 30px;
+    height: 30px;
+    overflow: hidden;
+    color: transparent;
+    font-size: 0;
+}
+.TSAA #page-friends a.friend-atai:hover {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='1.75' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath stroke='none' d='M0 0h24v24H0z' fill='none'/%3E%3Cpath d='M5 12l5 5l10 -10' /%3E%3C/svg%3E");
+}
+
+/* ==================================================
+    PAGE D'ACCES AU TCHAT (TCHAT)
+===================================================== */
+
+/*  Entête
+===================================================== */
+
+/*  Entête (2 boutons) */
+.TSAA #page-tchat .tchat-heading {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 24px;
+    width: 100%;
+}
+.TSAA #page-tchat .tchat-heading::after {
+    position: absolute;
+    bottom: -15px;
+    left: 0;
+    background-color: var(--tsaa-color-light);
+    width: 100%;
+    height: 2px;
+    content: "";
+}
+
+/*  Règle la taille des boutons */
+.TSAA #page-tchat #btn-singlechat,
+.TSAA #page-tchat #btn-tchat {
+    flex: 1;
+}
+
+/*  Textes par défaut des boutons */
+.TSAA #page-tchat #btn-singlechat::after,
+.TSAA #page-tchat #btn-tchat::after {
+    margin-left: 6px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 16px;
+    height: 16px;
+    content: "";
+}
+
+/*  Styles du bouton vers Singlechat */
+.TSAA #page-tchat #btn-singlechat {
+    cursor: not-allowed !important;
+    border-color: transparent;
+    background-color: var(--tsaa-btn-disabled-color);
+}
+.TSAA #page-tchat #btn-singlechat::before {
+    content: "Singlechat";
+}
+.TSAA #page-tchat #btn-singlechat::after {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgb(73 10 36)' stroke-width='1.25' stroke-linecap='round' stroke-linejoin='round' class='icon icon-tabler icons-tabler-outline icon-tabler-lock'%3E%3Cpath stroke='none' d='M0 0h24v24H0z' fill='none'/%3E%3Cpath d='M5 13a2 2 0 0 1 2 -2h10a2 2 0 0 1 2 2v6a2 2 0 0 1 -2 2h-10a2 2 0 0 1 -2 -2v-6z' /%3E%3Cpath d='M11 16a1 1 0 1 0 2 0a1 1 0 0 0 -2 0' /%3E%3Cpath d='M8 11v-4a4 4 0 1 1 8 0v4' /%3E%3C/svg%3E");
+}
+
+/*  Styles du bouton vers la messagerie ATAI */
+.TSAA #page-tchat #btn-singlechat {
+    box-shadow: var(--tsaa-btn-shadow);
+    border-color: transparent;
+    background-color: var(--tsaa-btn-disabled-color);
+}
+.TSAA #page-tchat #btn-tchat::before {
+    content: "Messagerie";
+}
+.TSAA #page-tchat #btn-tchat::after {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgb(73 10 36)' stroke-width='1.25' stroke-linecap='round' stroke-linejoin='round' class='icon icon-tabler icons-tabler-outline icon-tabler-arrow-up-right'%3E%3Cpath stroke='none' d='M0 0h24v24H0z' fill='none'/%3E%3Cpath d='M17 7l-10 10' /%3E%3Cpath d='M8 7l9 0l0 9' /%3E%3C/svg%3E");
+}
+
+/*  Liste des tchats
+===================================================== */
+
+/*  Carte de conversation */
+.TSAA #page-tchat .tchat-card {
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    transition: background-color .15s ease-out;
+    margin-block: 6px;
+    border-radius: 5px;
+    background-color: var(--tsaa-friend-bg-color);
+    padding: 10px;
+    width: 100%;
+}
+.TSAA #page-tchat .tchat-card:hover {
+    background-color: var(--tsaa-friend-bg-hover);
+}
+
+/*  Avatar du contact */
+.TSAA #page-tchat img.friend-avatar {
+    border: var(--tsaa-color-nav-avatar-border);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+}
+
+/*  Infos du tchat */
+.TSAA #page-tchat .tchat-infos {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    gap: 2px;
+}
+
+/*  Empêche le dépassement */
+.TSAA #page-tchat .friend-infos > p.friend-id,
+.TSAA #page-tchat .friend-infos > p.tchat-date {
+    display: -webkit-box;
+    text-wrap: 16px;
+    -webkit-box-orient: vertical;
+    max-width: 100%;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+}
+
+/*  ID ATAI du contact */
+.TSAA #page-tchat .tchat-infos > p.friend-id {
+    font-weight: 600;
+    font-size: 14px !important;
+}
+
+/*  Date de la session archivée */
+.TSAA #page-tchat .tchat-infos > p.tchat-date {
+    opacity: .75;
+    font-size: 12px !important;
+}
+
+/*  Liens vers la session archivé */
+.TSAA #page-tchat a.tchat-link {
+    display: block;
+    transition: background-image .15s ease-out;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath stroke='none' d='M0 0h24v24H0z' fill='none'/%3E%3Cpath d='M8 9h8' /%3E%3Cpath d='M8 13h6' /%3E%3Cpath d='M18 4a3 3 0 0 1 3 3v8a3 3 0 0 1 -3 3h-5l-5 3v-3h-2a3 3 0 0 1 -3 -3v-8a3 3 0 0 1 3 -3h12z' /%3E%3C/svg%3E");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 24px;
+    height: 24px;
+    overflow: hidden;
+    color: transparent;
+    font-size: 0;
+}
+.TSAA #page-tchat a.tchat-link:hover {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='%23ffffff'%3E%3Cpath stroke='none' d='M0 0h24v24H0z' fill='none'/%3E%3Cpath d='M18 3a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-4.724l-4.762 2.857a1 1 0 0 1 -1.508 -.743l-.006 -.114v-2h-1a4 4 0 0 1 -3.995 -3.8l-.005 -.2v-8a4 4 0 0 1 4 -4zm-4 9h-6a1 1 0 0 0 0 2h6a1 1 0 0 0 0 -2m2 -4h-8a1 1 0 1 0 0 2h8a1 1 0 0 0 0 -2' /%3E%3C/svg%3E");
+}
+
+/* ==================================================
+    CREDITS
+===================================================== */
+
+.TSAA p.credit,
+.TSAA p.credit > a {
+    color: #252525;
+    font-size: 11px!important;
+}
+
+.TSAA p.credit {
+    opacity: .75;
+    margin-top: 8px;
+    width: 100%;
+    text-align: center;
+}
