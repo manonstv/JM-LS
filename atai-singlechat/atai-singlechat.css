@@ -1,0 +1,437 @@
+/* ==================================================
+    CODE ATAI SINGLECHAT
+===================================================== */
+
+/*
+* Version : v.1.1
+* Projet : singlechat ATAI
+* Propriétaire : just-married.variousforum.com
+* Crédits : code par Tuski de Just Married !
+*/
+
+/* ==================================================
+    VARIABLES
+===================================================== */
+
+:root {
+    /*  Couleurs principales */
+    --tsasc-color-primary: #a1265a;
+    --tsasc-color-secondary: #F1BBD5;
+    /*  Texte */
+    --tsasc-text-color: #525252;
+    --tsasc-text-light: #fafafa;
+    --tsasc-text-dark: #252525;
+    /*  Surfaces */
+    --tsasc-mail-body-bg: #fafafa;
+    /*  Sélection */
+    --tsasc-selection-color: var(--tsasc-color-primary);
+    --tsasc-selection-bg: var(--tsasc-color-secondary);
+    /*  Ascenseur */
+    --tsasc-scrollbar-width: thin;
+    --tsasc-scrollbar-color: #f9f9f9;
+    --tsasc-scrollbar-bg: transparent;
+}
+
+/* ==================================================
+    NORMALISATION DES STYLES
+===================================================== */
+
+/*  Custom reset
+===================================================== */
+
+.TSASC {
+    cursor: default;
+    margin: 8px;
+}
+
+/*  Normalise typographie */
+.TSASC * {
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    color: var(--tsasc-text-color);
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+/*  Normalise paragraphes */
+.TSASC p {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+/*  Normalise liens */
+.TSASC a {
+    transition: color .15s ease-out;
+    color: #e34d8d;
+    font-weight: 500;
+    text-decoration: none
+}
+
+.TSASC a:hover {
+    color: #ee75add8;
+}
+
+/*  Normalise images */
+.TSASC img {
+    display: block;
+    background-color: var(--tsasc-color-light);
+    width: 100%;
+    overflow: hidden;
+}
+
+/*  Transforme icons en boutons */
+.TSASC label {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    cursor: pointer;
+}
+
+/*  Invisibilise boutons tab */
+.TSASC input {
+    display: none;
+}
+
+/*  Personnalisation de la sélection */
+.TSASC ::selection {
+    background-color: var(--tsasc-selection-bg);
+    color: var(--tsasc-selection-color);
+}
+
+/* ==================================================
+    STRUCTURE DE L'APP
+===================================================== */
+
+.TSASC .atai-sc-app {
+    box-shadow: rgb(26 6 15 / 12%) 2px 2px 10px;
+    border-radius: 5px;
+    background-color: #fafafa;
+    overflow: hidden;
+}
+
+/*  Entête de l'app
+===================================================== */
+
+/*  Partie navigation de l'app */
+.TSASC .app-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    background-color: var(--tsasc-color-primary);
+    padding: 8px 24px 8px 16px;
+    width: 100%;
+    height: 60px;
+    overflow: hidden;
+    color: var(--tsasc-text-light);
+}
+
+/*  Logo ATAI */
+.TSASC .atai-logo {
+    background-image: url("https://zupimages.net/up/25/10/camq.png");
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    aspect-ratio: 2/1;
+    width: 100px;
+    height: auto;
+}
+
+/*  Texte "Messagerie" automatique */
+.TSASC p.app-name {
+    display: inline-flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+}
+.TSASC p.app-name::after {
+    content: "Singlechat";
+    color: var(--tsasc-text-light);
+    font-weight: 700;
+    font-size: 16px !important;
+    letter-spacing: .5px;
+}
+.TSASC p.app-name::before {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 8px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='%23fafafa' class='icon icon-tabler icons-tabler-filled icon-tabler-message-chatbot'%3E%3Cpath stroke='none' d='M0 0h24v24H0z' fill='none'/%3E%3Cpath d='M18 3a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-4.724l-4.762 2.857a1 1 0 0 1 -1.508 -.743l-.006 -.114v-2h-1a4 4 0 0 1 -3.995 -3.8l-.005 -.2v-8a4 4 0 0 1 4 -4zm-2.8 9.286a1 1 0 0 0 -1.414 .014a2.5 2.5 0 0 1 -3.572 0a1 1 0 0 0 -1.428 1.4a4.5 4.5 0 0 0 6.428 0a1 1 0 0 0 -.014 -1.414m-5.69 -4.286h-.01a1 1 0 1 0 0 2h.01a1 1 0 0 0 0 -2m5 0h-.01a1 1 0 0 0 0 2h.01a1 1 0 0 0 0 -2' /%3E%3C/svg%3E");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 20px;
+    height: 20px;
+    content: "";
+}
+
+/*  Partie utilisateur */
+.TSASC .app-user {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+/*  Illusion lien cliquable */
+.TSASC .app-user > *:not(img) {
+    cursor: pointer;
+}
+
+/*  Avatar utilisateur */
+.TSASC .app-user > img.user-avatar {
+    border: 2px solid #e5d9df;
+    border-radius: 50%;
+    aspect-ratio: 1/1;
+    width: 38px;
+    height: 38px;
+    object-fit: cover;
+}
+
+/*  Nom utilisateur */
+.TSASC .app-user > p.user-name {
+    display: inline-flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    transition: color .15s ease-out;
+    color: #e5d9df;
+    font-weight: 600;
+    font-size: 14px !important;
+}
+.TSASC .app-user > p.user-name > span {
+    display: inline-flex;
+    justify-content: flex-start;
+    transition: color .15s ease-out;
+    width: 100%;
+    max-width: 60px;
+    color: #e5d9df;
+    font-weight: 600;
+    font-size: 14px !important;
+    line-height: 1.2;
+    text-align: center;
+}
+.TSASC .app-user > p.user-name:hover,
+.TSASC .app-user > p.user-name > span:hover{
+    color: var(--tsasc-text-light);
+}
+.TSASC .app-user > p.user-name::after {
+    display: flex;
+    position: relative;
+    top: 1px;
+    justify-content: center;
+    align-items: center;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='15' height='15' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath stroke='none' d='M0 0h24v24H0z' fill='none'/%3E%3Cpath d='M15 11l-3 3l-3 -3' /%3E%3Cpath d='M12 3a9 9 0 1 0 0 18a9 9 0 0 0 0 -18z' /%3E%3C/svg%3E");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 15px;
+    height: 15px;
+    content: "";
+}
+
+/* ==================================================
+    STRUCTURE DU MESSAGE
+===================================================== */
+
+/*  Corps du message */
+.TSASC .mail {
+    padding: 24px;
+}
+
+/*  Entête du message
+===================================================== */
+
+/*  Entête du message (infos) */
+.TSASC .mail-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    margin-block: 0px 24px;
+}
+.TSASC .mail-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+}
+
+/*  Avatar expéditeur */
+.TSASC img.user-avatar {
+    border: 2px solid #f1bbd5;
+    border-radius: 50%;
+    aspect-ratio: 1/1;
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+}
+
+/*  Informations expéditeur */
+.TSASC .user-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+}
+
+/*  Nom expéditeur */
+.TSASC .user-info > p.user-name {
+    color: var(--tsasc-text-dark);
+    font-weight: 600;
+    font-size: 15px !important;
+}
+
+/*  Lien expéditeur */
+.TSASC .user-info > p.user-mailing {
+    color: var(--tsasc-text-color);
+    font-size: 13px !important;
+}
+.TSASC .user-info > p.user-mailing > a {
+    font-size: 13px !important;
+}
+
+/*  Ajout automatique du préfixe au lien */
+.TSASC .user-info > p.user-mailing > a::before {
+    content: "@";
+    color: inherit;
+}
+
+/*  Infos message */
+.TSASC .mail-plus {
+    display: flex;
+    flex-direction: column;
+}
+
+/*  Date message */
+.TSASC p.mail-date {
+    display: inline-flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    gap: 7px;
+    color: #797979;
+    font-size: 13px !important;
+}
+
+/*  Icone pièce-jointe */
+.TSASC p.have-pj::before {
+    display: flex;
+    position: relative;
+    top: 1px;
+    justify-content: center;
+    align-items: center;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23525252' stroke-width='1.25' stroke-linecap='round' stroke-linejoin='round' class='icon icon-tabler icons-tabler-outline icon-tabler-paperclip'%3E%3Cpath stroke='none' d='M0 0h24v24H0z' fill='none'/%3E%3Cpath d='M15 7l-6.5 6.5a1.5 1.5 0 0 0 3 3l6.5 -6.5a3 3 0 0 0 -6 -6l-6.5 6.5a4.5 4.5 0 0 0 9 9l6.5 -6.5' /%3E%3C/svg%3E");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 16px;
+    height: 16px;
+    content: "";
+}
+
+/*  Corps du message
+===================================================== */
+
+/*  Corps du message */
+.TSASC .mail-body {
+    border: 1px solid #f1bbd5;
+    border-radius: 8px;
+    background-color: #f1bbd533;
+    padding: 20px 24px;
+}
+
+/*  Typographie du message */
+.mail-body:not(:last-child) {
+    margin-bottom: 20px;
+}
+.TSASC .mail-body p {
+    width: fit-content;
+}
+.TSASC .mail-body,
+.TSASC .mail-body p:not(p.mail-object) {
+    color: var(--tsasc-text-color);
+    font-size: 15px !important;
+    line-height: 1.5;
+}
+.TSASC .mail-body p:not(:last-child) {
+    margin-bottom: 14px;
+}
+
+/*  Objet du message */
+.TSASC .mail-body p.mail-object {
+    margin-bottom: 14px;
+    font-weight: 600;
+    font-size: 16px !important;
+}
+
+/*  Thème questionnaire actuel */
+.TSASC .mail-body p.survey-theme::before {
+    margin-right: 4px;
+    content: "Thème actuel :";
+    font-weight: 600;
+    font-size: 16px !important;
+    letter-spacing: .5px;
+}
+
+/*  ID du questionnaire envoyé */
+.TSASC .mail-body p.conv-id {
+    font-size: 14px !important;
+}
+.TSASC .mail-body p.conv-id::before {
+    margin-right: 4px;
+    content: "Identification :";
+    font-weight: 600;
+    font-size: 14px !important;
+    letter-spacing: .5px;
+}
+
+/*  Typographie du questionnaire */
+.TSASC .mail-body ul.survey {
+    margin-bottom: 0;
+    padding-left: 28px;
+}
+.TSASC .mail-body ul.survey > li {
+    margin-bottom: 6px;
+    font-weight: 600;
+    font-size: 14px !important;
+    line-height: 1.4;
+}
+.TSASC .mail-body ul.survey > ul {
+    margin-bottom: 0px;
+    padding-left: 24px;
+}
+.TSASC .mail-body ul.survey > ul:not(:last-child) {
+    margin-bottom: 16px;
+}
+.TSASC .mail-body ul.survey > ul > li {
+    cursor: text;
+    width: fit-content;
+    font-size: 14px !important;
+}
+
+/* ==================================================
+    CREDITS
+===================================================== */
+
+.TSASC p.credit {
+    opacity: .5;
+    margin-block: 0px 12px;
+    width: 100%;
+    text-align: center;
+}
+
+.TSASC p.credit,
+.TSASC p.credit > a {
+    transition: opacity .15s ease-out;
+    color: #252525;
+    font-size: 11px!important;
+}
+
+.TSASC p.credit:hover {
+    opacity: 1;
+    color: #252525;
+    font-size: 11px!important;
+}
