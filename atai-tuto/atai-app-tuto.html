@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="https://i.postimg.cc/3NZSBzRk/favicon.png" />
+    <title>Tutoriel ATAI App</title>
+    <link rel="stylesheet" href="https://manonstv.github.io/JM-LS/atai-app/atai-app-min.css">
+    <link rel="stylesheet" href="atai-app-tuto.css">
+</head>
+<body>
+
+    <div class="flex-tuto">
+        <div class="TSAA">
+            <div class="device02">
+                <div class="phone-speaker"></div>
+                <div class="phone-screen">
+                    <input type="radio" id="tab-home" name="tab">
+                    <input type="radio" id="tab-profile" name="tab" checked>
+                    <input type="radio" id="tab-about" name="tab">
+                    <input type="radio" id="tab-friends" name="tab">
+                    <input type="radio" id="tab-tchat" name="tab">
+                    <div class="atai-app">
+                        <div class="app-header">
+                            <div class="nav-group">
+                                <label for="tab-home"><div class="btn-icon icon-return"></div></label>
+                                <p class="home-link"></p>
+                            </div>
+                            <div class="nav-group">
+                                <div class="btn-icon icon-notif"><p class="notif-number">17</p></div>
+                                <div class="btn-icon icon-mailbox"><p class="mail-number">3</p></div>
+                                <div class="user-settings"><img class="nav-avatar" src="https://zupimages.net/up/25/07/lexe.jpeg" alt="avatar profil"><div class="online-status"></div></div>
+                            </div>
+                        </div>
+                        <div class="app-body">
+                            <div class="page-tab" id="page-home">
+                                <div class="page-content">
+                                    <a class="fake-search" href="https://just-married.variousforum.com/f122-atai" target="_blank" id="search-link"></a>
+                                    <div class="logo-atai"></div>
+                                    <div class="logged"></div>
+                                    <label for="tab-profile"><div class="btn btn-primary" id="see-profile"></div></label>
+                                </div>
+                            </div>
+                            <div class="page-tab" id="page-profile">
+                                <div class="page-content">
+                                    <div class="section-user">
+                                        <img class="user-avatar" src="https://zupimages.net/up/25/07/lexe.jpeg" alt="avatar">
+                                        <p class="pill user-name">Tsukimi Orikasa</p>
+                                        <p class="user-id">@TsukimiOrikasa</p>
+                                    </div>
+                                    <div class="section-profile">
+                                        <p class="birth">11 janvier 2087</p>
+                                        <p class="activity">Vendeuse chez God's Pleasure</p>
+                                        <p class="location">Tokyo (Setagaya)</p>
+                                        <p class="status">Célibataire</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="page-tab" id="page-about">
+                                <div class="page-content">
+                                    <div class="section-keywords">
+                                        <img class="key-avatar" src="https://zupimages.net/up/25/07/lexe.jpeg" alt="avatar">
+                                        <div class="key-list">
+                                            <p class="pill keyword">Gameuse</p>
+                                            <p class="pill keyword">Curieuse</p>
+                                            <p class="pill keyword">Sportive</p>
+                                            <p class="pill keyword">Cat person</p>
+                                            <p class="pill keyword">Fêtarde</p>
+                                            <p class="pill keyword">Hot 🔥</p>
+                                            <p class="pill keyword">Oiseau d'nuit</p>
+                                            <p class="pill keyword">Netflix & chill</p>
+                                        </div>
+                                    </div>
+                                    <div class="section-survey">
+                                        <p class="age">28 ans</p>
+                                        <p class="gender">Féminin</p>
+                                        <p class="nationality">Japonaise</p>
+                                        <p class="size">1m72</p>
+                                        <p class="weight">52kg</p>
+                                        <p class="eyes">Bleus</p>
+                                        <p class="tatoo">Non</p>
+                                        <p class="tobacco">Parfois</p>
+                                        <p class="alcohol">Festif</p>
+                                        <p class="drugs">Jamais 👀</p>
+                                        <p class="sports">Fitness</p>
+                                        <p class="pets">Un chat ❤️</p>
+                                    </div>
+                                    <p class="intro-text" style="text-align: center">J'ai pas besoin d'un prince charmant, juste d'un bon partenaire pour les quêtes secondaires <br> (et les nuits blanches 👀🔥)</p>
+                                    <div class="section-like">
+                                        <div class="heading"></div>
+                                        <div class="like-list">
+                                            <p class="pill like">Geeker 🎮</p>
+                                            <p class="pill like">Flirter 🔥</p>
+                                            <p class="pill like">Me défouler 🎯 </p>
+                                            <p class="pill like">Chanter 🎶</p>
+                                            <p class="pill like">Chiller 🎧</p>
+                                            <p class="pill like">Picoler 🍸</p>
+                                            <p class="pill like">Stalker 👩‍💻</p>
+                                            <p class="pill like">Bitcher 🧐</p>
+                                            <p class="pill like">Tirer des plans 🚀</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="page-tab" id="page-friends">
+                                <div class="page-content">
+                                    <div class="heading"></div>
+                                    <div class="friends-list">
+                                        <div class="friend-card">
+                                            <img class="friend-avatar" src="https://zupimages.net/up/25/09/71sg.jpg" alt="Friend avatar">
+                                            <div class="friend-infos">
+                                                <p class="friend-name">John Doe</p>
+                                                <p class="friend-id">@JohnDoe</p>
+                                            </div>
+                                            <a class="stretched friend-atai" href="https://just-married.variousforum.com/f122-atai" target="_blank"></a>
+                                        </div>
+                                        <div class="friend-card">
+                                            <img class="friend-avatar" src="https://zupimages.net/up/25/09/71sg.jpg" alt="Friend avatar">
+                                            <div class="friend-infos">
+                                                <p class="friend-name">John Doe</p>
+                                                <p class="friend-id">@JohnDoe</p>
+                                            </div>
+                                            <a class="stretched friend-atai" href="https://just-married.variousforum.com/f122-atai" target="_blank"></a>
+                                        </div>
+                                        <div class="friend-card">
+                                            <img class="friend-avatar" src="https://zupimages.net/up/25/09/71sg.jpg" alt="Friend avatar">
+                                            <div class="friend-infos">
+                                                <p class="friend-name">John Doe</p>
+                                                <p class="friend-id">@JohnDoe</p>
+                                            </div>
+                                            <a class="stretched friend-atai" href="https://just-married.variousforum.com/f122-atai" target="_blank"></a>
+                                        </div>
+                                        <div class="friend-card">
+                                            <img class="friend-avatar" src="https://zupimages.net/up/25/09/71sg.jpg" alt="Friend avatar">
+                                            <div class="friend-infos">
+                                                <p class="friend-name">John Doe</p>
+                                                <p class="friend-id">@JohnDoe</p>
+                                            </div>
+                                            <a class="stretched friend-atai" href="https://just-married.variousforum.com/f122-atai" target="_blank"></a>
+                                        </div>
+                                        <div class="friend-card">
+                                            <img class="friend-avatar" src="https://zupimages.net/up/25/09/71sg.jpg" alt="Friend avatar">
+                                            <div class="friend-infos">
+                                                <p class="friend-name">John Doe</p>
+                                                <p class="friend-id">@JohnDoe</p>
+                                            </div>
+                                            <a class="stretched friend-atai" href="https://just-married.variousforum.com/f122-atai" target="_blank"></a>
+                                        </div>
+                                        <div class="friend-card">
+                                            <img class="friend-avatar" src="https://zupimages.net/up/25/09/71sg.jpg" alt="Friend avatar">
+                                            <div class="friend-infos">
+                                                <p class="friend-name">John Doe</p>
+                                                <p class="friend-id">@JohnDoe</p>
+                                            </div>
+                                            <a class="stretched friend-atai" href="https://just-married.variousforum.com/f122-atai" target="_blank"></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="page-tab" id="page-tchat">
+                                <div class="page-content">
+                                    <div class="tchat-heading">
+                                        <a class="btn btn-primary v-married" href="https://just-married.variousforum.com/t19071-atai-singlechat" target="_blank" id="btn-singlechat"></a>
+                                        <a class="btn btn-primary" href="https://just-married.variousforum.com/f36-messagerie-atai" target="_blank" id="btn-tchat"></a>
+                                    </div>
+                                    <div class="tchat-list">
+                                        <div class="tchat-card">
+                                            <img class="friend-avatar" src="https://zupimages.net/up/25/09/71sg.jpg" alt="Friend avatar">
+                                            <div class="tchat-infos">
+                                                <p class="friend-id">@JohnDoe</p>
+                                                <p class="tchat-date">Session juil. 2115</p>
+                                            </div>
+                                            <a class="stretched tchat-link" href="https://just-married.variousforum.com/f36-messagerie-atai" target="_blank"></a>
+                                        </div>
+                                        <div class="tchat-card">
+                                            <img class="friend-avatar" src="https://zupimages.net/up/25/09/71sg.jpg" alt="Friend avatar">
+                                            <div class="tchat-infos">
+                                                <p class="friend-id">@JohnDoe</p>
+                                                <p class="tchat-date">Session juil. 2115</p>
+                                            </div>
+                                            <a class="stretched tchat-link" href="https://just-married.variousforum.com/f36-messagerie-atai" target="_blank"></a>
+                                        </div>
+                                        <div class="tchat-card">
+                                            <img class="friend-avatar" src="https://zupimages.net/up/25/09/71sg.jpg" alt="Friend avatar">
+                                            <div class="tchat-infos">
+                                                <p class="friend-id">@JohnDoe</p>
+                                                <p class="tchat-date">Session juil. 2115</p>
+                                            </div>
+                                            <a class="stretched tchat-link" href="https://just-married.variousforum.com/f36-messagerie-atai" target="_blank"></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="app-footer">
+                            <label for="tab-home"><div class="btn-icon icon-home"></div></label>
+                            <label for="tab-profile"><div class="btn-icon icon-profile"></div></label>
+                            <label for="tab-about"><div class="btn-icon icon-about"></div></label>
+                            <label for="tab-friends"><div class="btn-icon icon-friends"></div></label>
+                            <label for="tab-tchat"><div class="btn-icon icon-tchat"></div></label>
+                        </div>
+                    </div>
+                </div>
+                <div class="phone-home"></div>
+            </div>
+            <p class="credit">Code &copy; <a href="https://just-married.variousforum.com/u3777">Tsuki de JM!</a></p>
+        </div>
+        <div class="TSAT">
+            <section class="section">
+                <header><h2>Description</h2></header>
+                <article class="article">
+                    <h3>Préambule</h3>
+                    <p>Un GRAND merci à <strong>Ren</strong> de m'avoir proposé cette mission ! Cela représente pas mal de boulot mais le résultat est là : la simulation d'une application native interactive et propre. Comme discuté dans le cahier des charges, le code a l'apparence d'une application native <em>citizen-friendly</em> prenant compte du dernier event, aux couleurs de la fameuse enveloppe rose (l'icône de l'app, une fleur de sakura, est un clien d'oeil suggéré par Ren pour faire référence à la teinte de ce rose).</p>
+                    <p><strong>Nota Bene :</strong> le code est hébergé via Github Pages pour une maintenance plus efficace à l'avenir, et cette page est réservée au Staff de JM (un genre de tuto que je peux alimenter au fur et à mesure pour corriger des trucs).</p>
+                    <p><strong>Nota bene :</strong> le code qui s'affiche dans cette page est une demo fonctionnelle à visée strictement illustrative (les liens ne dirigent pas forcément aux endroits concernés). Le code fourni plus bas, à donner aux membres, est la version vierge à compléter.</p>
+                    <p>Je ne propose dans cette page qu'un descriptif du code à usage du Staff. Le code final est très simple à compléter, mais je préfère m'étendre ici de façon exhaustive pour couvrir tous les aspects du code et prévoir d'éventuelles questions. Je vous laisse gérer la façon dont vous le présenterez aux membres (c'est-à-dire, de façon plus concise !!) ^^</p>
+                    <hr>
+                    <h3>Description</h3>
+                    <p>Le code propose une interface mobile avec navigation intégrée. Voici un descriptif exhaustif de l'ensemble :</p>
+                    <ul>
+                        <li>La <strong>barre de navigation supérieure</strong> recueille les informations de la page affichée à gauche (actualisées en temps réel) et de l'utilisateur à droite (nombre de notifs et de messages en attente personnalisable, et avatar ATAI). L'icône en forme de flèche indique qu'un retour arrière vers la page d'accueil de l'application est possible. C'est un bouton cliquable.</li>
+                        <li>La <strong>barre de navigation inférieure</strong> compte 5 icônes, qui sont des boutons cliquables permettant de naviguer d'ne page à l'autre de l'application.</li>
+                        <li>Par défaut, <strong>la page "profil"</strong> de l'utilisateur est affichée. Les éléments personnalisables de cette page sont : l'avatar ATAI de l'utilisateur, son nom complet, son identifiant au format ATAI, sa date de naissance, son activité, son lieu d'habitation et son statut martial.</li>
+                        <li><strong>La page "accueil"</strong> est accessible via l'icône en forme de maison dans la barre de navigation inférieure, ou en cliquant sur l'icône de flèche dans la barre de navigation supérieure. C'est une page strictement décorative. Le champs de recherche supérieur est un lien déguisé vers la liste de topics des profils ATAI du forum ; le bouton "Voir le profil" permet de passer à la page "profil".</li>
+                        <li><strong>La page "à propos"</strong> est accessible via l'icône en forme de livre dans la barre de navigation inférieure. Les éléments personnalisables sont : l'avatar ATAI de l'utilisateur, les mots-clefs personnalisés caractérisant sa personnalité, les réponses au questionnaire de présentation, le texte de la "bulle" qui consiste en une punchline, disquette ou paragraphe de description rapide de l'utilisateur, et les mots-clefs caractérisant ses centres d'intérêt. <br><strong>Nota bene :</strong> le texte des catégories du questionnaire de présentation est injecté automatiquement par le code. La double-colonne est adaptative au contenu. Il est recommandé de les compléter de façon concise. <br><strong>Nota bene :</strong> le code permet le copier-coller d'émoji standards intégrables directement dans les parties modifiables, en toute simplicité, pour ajouter de la couleur.</li>
+                        <li><strong>La page "répertoire"</strong> est accessible via l'icône d'éoile dans la barre de navigation inférieure. Le texte d'entête est injecté automatiquement par le code. Les éléments personnalisables sont : l'avatar, le nom complet et l'identifiant du contact. Chaque élément du répertoire de contact est un lien renvoyant vers le profil ATAI, si existant, du personnage-joueur en question, à compléter.</li>
+                        <li><strong>La page "Messagerie ATAI"</strong> est accessible via l'icône en forme de bulle de texte dans la barre de navigation inférieure.Le texte des boutons d'entête est injecté automatiquement par le code. Le bouton "Singlechat" est cliquable ou non selon la classe qui lui est associé ("v-single" pour la version célibataire de l'app, qui renvoie alors vers le forum "Singlechat" du fow ; "v-married" pour la version de l'app dédiée aux couples mariés, qui empêche alors d'accéder au forum). Le bouton "Messagerie" pointe vers la liste des topics du forum "Messagerie ATAI" du fow. La page permet de lister manuellement les conversations archivées des membres dans la messagerie ATAI du fow. Les éléments personnalisables sont : l'avatar et l'identifiant ATAI des destinataires, ainsi que la date de la conversation IRP, et le lien qui pointe vers la conversation sur le fow.</li>
+                    </ul>
+                </article>
+            </section>
+            <section class="section">
+                <header><h2>Code</h2></header>
+                <article class="article">
+                    <p>Voici le code HTML à copier-coller puis à compléter pour créer le profil ATAI d'un personnage : <a style="color: #a1265a;" href="https://raw.githubusercontent.com/manonstv/JM-LS/refs/heads/main/atai-app/atai-app.html" target="_blank">https://raw.githubusercontent.com/manonstv/JM-LS/refs/heads/main/atai-app/atai-app.html</a>.</p>
+                    <p>Vous accéderez au code "brut" de la partie HTML, qu'il suffit de copier-coller entre balises <code>[code][/code]</code> sur le forum pour le proposer aux membres.</p>
+                    <h3>Consignes</h3>
+                    <ul>
+                        <li>Les parties du code à compléter sont signalées par un <strong>commentaire</strong> en début de ligne et un "ici" aux endroits concernés. Pour les URL d'images et les liens à compléter, les indications sont signalées en <strong>lettres capitales</strong> et <strong>_underscores_</strong> dans les balises d'images et de liens concernées.</li>
+                        <li><strong>Ne pas ajouter d'espaces ou de sauts de lignes</strong>. Ils sont inclus et gérés par défaut par le code CSS.</li>
+                        <li>Tout ajout doit se faire par strict <strong>retour à la ligne</strong> en intégrant les parties de codes fournies par ce tutoriel.</li>
+                        <li>Ne supprimer aucun caractère ou aucun bout de code à l'exception de ceux expliqués dans ce tuto, car ils ont tous une utilité.</li>
+                        <li>Encore une fois, la partie HTML ne doit contenir <strong>aucun saut de ligne</strong>. Il faut préciser aux membres que le code ne contient AUCUNE erreur. Ils ne doivent donc pas retirer le moindre caractère du code, y compris les commentaires HTML cassés, sous peine de compromettre l'intégrité du rendu.</li>
+                    </ul>
+                    <p><strong>Astuce :</strong> les injections automatiques de sauts de lignes (<code>&lt;br&gt;</code>) intempestifs par le script de forumactif sont contournées grâce à une astuce donnée par <strong>Yuna</strong> : afin de rendre le code HTML + lisible, les retours à la ligne sont simulés par le "cassage" de commentaires HTML (<code>&lt;!-- --&gt;</code>), permettant des retours à la ligne dans le code source afin de le rendre moins dense et plus facilement personnalisable, le tout sans conséquence dans le rendu.</p>
+                    <h3>Personnalisation</h3>
+                    <ul><li>Pour ajouter ou supprimer un mot-clef dans la partie supérieure de la page "A propos", il suffit d'ajouter ou de supprimer l'une de ces lignes de code :</li></ul>
+                    <pre><code>Mot-clef --&gt;&lt;p class=&quot;pill keyword&quot;&gt;Mot-clef&lt;/p&gt;&lt;!--</code></pre>
+                    <ul><li>De même, pour ajouter ou supprimer un mot-clef dans la partie inférieure de la page de profil, il suffit d'ajouter ou de supprimer l'une de ces lignes de code :</li></ul>
+                    <pre><code>Mot-clef (activité) --&gt;&lt;p class=&quot;pill like&quot;&gt;Mot-clef&lt;/p&gt;&lt;!--</code></pre>
+                    <ul><li>Pour ajouter ou supprimer un contact de la liste des contacts favoris, il suffit d'ajouter ou de supprimer ce bloc de code à la suite les uns des autres par retour à la ligne :</li></ul>
+                    <pre><code>--&gt;&lt;!-- Début code pour un ami --&gt;&lt;!--
+--&gt;&lt;div class=&quot;friend-card&quot;&gt;&lt;!--
+Avatar ami --&gt;&lt;img class=&quot;friend-avatar&quot; src=&quot;URL_AVATAR_ATAI_AMI&quot; alt=&quot;Friend avatar&quot;&gt;&lt;div class=&quot;friend-infos&quot;&gt;&lt;!--
+Nom ami (Pénom Nom) --&gt;&lt;p class=&quot;friend-name&quot;&gt;Prénom Nom&lt;/p&gt;&lt;!--
+Identifiant ATAI ami (@PrénomNom) --&gt;&lt;p class=&quot;friend-id&quot;&gt;@PrénomNom&lt;/p&gt;&lt;/div&gt;&lt;!--
+Lien vers profil ami --&gt;&lt;a class=&quot;stretched friend-atai&quot; href=&quot;URL_PROFIL_ATAI_AMI&quot; target=&quot;_blank&quot;&gt;&lt;/a&gt;&lt;/div&gt;&lt;!--
+--&gt;&lt;!-- Fin code pour un ami --&gt;&lt;!--</code></pre>
+                    <ul><li>De même, pour ajouter ou supprimer une conversation archivées dans la messagerie ATAI, il suffit d'ajouter ou de supprimer ce bloc de code à la suite les uns des autres par retour à la ligne :</li></ul>
+                    <pre><code>--&gt;&lt;!-- Début code pour une conversation archivée --&gt;&lt;!--
+--&gt;&lt;div class=&quot;tchat-card&quot;&gt;&lt;!--
+Avatar ATAI ami --&gt;&lt;img class=&quot;friend-avatar&quot; src=&quot;URL_AVATAR_ATAI_AMI&quot; alt=&quot;Friend avatar&quot;&gt;&lt;div class=&quot;tchat-infos&quot;&gt;&lt;!--
+Identifiant ATAI ami --&gt;&lt;p class=&quot;friend-id&quot;&gt;@PrénomNom&lt;/p&gt;&lt;!--
+Date de la conversation ATAI --&gt;&lt;p class=&quot;tchat-date&quot;&gt;Session xxxxx 2115&lt;/p&gt;&lt;/div&gt;&lt;!--
+Lien vers conversation ATAI --&gt;&lt;a class=&quot;stretched tchat-link&quot; href=&quot;URL_CONVERSATION_ATAI&quot; target=&quot;_blank&quot;&gt;&lt;/a&gt;&lt;/div&gt;&lt;!--
+--&gt;&lt;!-- Fin code pour une conversation archivée --&gt;&lt;!--</code></pre>
+                    <ul><li>En fonction du statut marital du personnage (célibataire ou marié), il faut modifier la classe CSS du lien dans la ligne de code suivante en fonction (<code>v-single</code> pour les persos célibataires ou <code>v-married</code> pour les persos marriés) :</li></ul>
+                    <pre><code>Remplacer &quot;v-married&quot; par &quot;v-single&quot; si célibataire --&gt;&lt;a class=&quot;btn btn-primary v-married&quot; href=&quot;https://just-married.variousforum.com/t19071-atai-singlechat&quot; target=&quot;_blank&quot; id=&quot;btn-singlechat&quot;&gt;&lt;/a&gt;&lt;!--</code></pre>
+                    <h3>Résumé</h3>
+                    <p>Voici en définitive la liste exhaustive des parties du code à compléter (dans l'ordre) :</p>
+                    <ul>
+                        <li><strong>Barre de navigation supérieure :</strong> le nombre de notifs sur la cloche, le nombre de notifs sur l'enveloppe, l'avatar du profil ATAI du personnage.</li>
+                        <li><strong>Page "profil" :</strong> l'avatar du profil ATAI du personnage, le nom complet du personnage, son ID ATAI, les quatres lignes correspondant à sa naissance, son activité, sa localisation et son statut marital.</li>
+                        <li><strong>Page "A propos" :</strong> l'avatar du profil ATAI du personnage, les mots-clefs de sa personnalité, les 12 lignes correspondant au questionnaire encadré, le paragraphe personnalisé de la bulle blanche, les motfs-clefs de ses activités préférées.</li>
+                        <li><strong>Page "Répertoire" :</strong> pour chaque contact : l'avatar du profil ATAI du personnage, son nom complet, son ID ATAI, l'adresse du lien pointant vers son profil ATAI sur le fow.</li>
+                        <li><strong>Page "Messagerie ATAI" :</strong> modifier ou non la classe "v-single" / "v-married" du bouton "Singlechat" en fonction du statut marital du personnage.</li>
+                        <li><strong>Page "Messagerie ATAI" :</strong> pour chaque conversation de la messagerue ATAI que le membre souhaite archiver ici : l'avatar du profil ATAI du personnage, son ID ATAI, la date de la conversation terminée, l'adresse du lien pointant vers la conversation terminée sur le fow.</li>
+                    </ul>
+                </article>
+            </section>
+            <section class="section">
+                <header><h2>Usages</h2></header>
+                <article class="article">
+                    <p><strong>Licence :</strong> j'autorise le Staff de JM à disposer comme il l'entend des codes sources de ce code pour le personnaliser à loisir.</p>
+                    <h3>Codes sources</h3>
+                    <p>Par soucis de simplicité, la partie CSS du code est hébergée via Github Page et liée à la partie HTML par une balise link. Pour accéder au code source des versions <strong>standard</strong> (commentée et expliquée), <strong>préfixée</strong> (pour optimisation sur tous navigateurs) et <strong>minifiée</strong> (pour performance au chargement), voici les différents liens :</p>
+                    <ul>
+                        <li>Version standard commentée et expliquée : <a style="color: #a1265a;" href="https://raw.githubusercontent.com/manonstv/JM-LS/refs/heads/main/atai-app/atai-app.css" target="_blank">https://raw.githubusercontent.com/manonstv/JM-LS/refs/heads/main/atai-app/atai-app.css</a></li>
+                        <li>Version préfixée : <a style="color: #a1265a;" href="https://raw.githubusercontent.com/manonstv/JM-LS/refs/heads/main/atai-app/atai-app-prefix.css" target="_blank">https://raw.githubusercontent.com/manonstv/JM-LS/refs/heads/main/atai-app/atai-app-prefix.css</a></li>
+                        <li>Version minifiée : <a style="color: #a1265a;" href="https://raw.githubusercontent.com/manonstv/JM-LS/refs/heads/main/atai-app/atai-app-min.css" target="_blank">https://raw.githubusercontent.com/manonstv/JM-LS/refs/heads/main/atai-app/atai-app-min.css</a></li>
+                    </ul>
+                    <p><strong>Au cas où :</strong> vous pouvez copier-coller ou bien télécharger le contenu de ces liens afin de modifier tout ou partie du code source à l'avenir, y compris pour l'héberger ailleurs ou le garder en local au cas où sur un PC, ou encore l'intégrer au CSS du fow (ce que je déconseille par soucis de compatibilité dans la priorisation CSS). Mais si vous ne comptez pas le modifier, laissez-le à cette adresse.</p>
+                    <p><strong>Conseil :</strong> pour une utilisation optimale, nul besoin de toucher au CSS. Laissez-le lié à la partie HTML (la seule à partager aux membres).</p>
+                </article>
+            </section>
+        </div>
+    </div>
+
+</body>
+</html>
