@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="https://i.postimg.cc/3NZSBzRk/favicon.png" />
+    <title>Tutoriel Messagerie ATAI</title>
+    <link rel="stylesheet" href="https://manonstv.github.io/JM-LS/atai-tchat/atai-tchat-min.css">
+    <link rel="stylesheet" href="atai-tchat-tuto.css">
+</head>
+<body>
+
+    <div class="flex-tuto">
+        <div class="TSAM">
+            <div class="atai-tchat-app">
+                <div class="app-header">
+                    <div class="atai-logo"></div>
+                    <p class="app-name"></p>
+                    <div class="app-user">
+                        <!-- Avatar de l'utilisateur qui reçoit le message-->
+                        <img class="user-avatar" src="https://zupimages.net/up/25/09/71sg.jpg" alt="avatar utilisateur">
+                        <!-- Nom de l'utilisateur qui reçoit le message-->
+                        <p class="user-name"><span>John Doe</span></p>
+                    </div>
+                </div>
+                <div class="app-body">
+                    <div class="mail">
+                        <div class="mail-header">
+                            <div class="mail-info">
+                                <img class="user-avatar" src="https://zupimages.net/up/25/07/lexe.jpeg" alt="avatar utilisateur">
+                                <div class="user-info">
+                                    <p class="user-name">Tsukimi Orikasa</p>
+                                    <p class="user-mailing"><a href="#" target="_blank">TsukimiOrikasa</a> à <a href="#" target="_blank">JohnDoe</a></p>
+                                </div>
+                            </div>
+                            <div class="mail-plus">
+                                <p class="mail-date have-pj">Mardi 15 juil. 2115</p>
+                            </div>
+                        </div>
+                        <div class="mail-body">
+                            <p class="mail-object">Objet du message</p>
+                            <p>Lorem, ipsum dolor.</p>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis ad nobis distinctio voluptatem tempora, et id vero culpa aspernatur adipisci ipsum doloremque a, aliquid praesentium sequi blanditiis officiis neque obcaecati!</p>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi sint explicabo at aut soluta ducimus itaque molestias doloribus rerum obcaecati.</p>
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempora pariatur culpa provident accusantium impedit nobis adipisci nesciunt?</p>
+                            <p>Lorem ipsum dolor sit.</p>
+                            <p>Tsuki</p>
+                        </div>
+                        <div class="mail-footer">
+                            <div class="img-list">
+                                <img src="https://i.servimg.com/u/f90/19/77/04/51/cate-l14.png" alt="...">
+                                <img src="https://i.servimg.com/u/f90/19/77/04/51/cate-l14.png" alt="...">
+                                <img src="https://i.servimg.com/u/f90/19/77/04/51/cate-l14.png" alt="...">
+                            </div>
+                            <div class="pj-list">
+                                <p class="pj-item pj-pdf">Document.pdf</p>
+                                <p class="pj-item pj-doc">Document.doc</p>
+                                <p class="pj-item pj-cv">Document.pdf</p>
+                                <p class="pj-item pj-code">Document.html</p>
+                                <p class="pj-item pj-jpg">Document.jpg</p>
+                                <p class="pj-item pj-png">Document.png</p>
+                                <p class="pj-item pj-mp4">Document.mp4</p>
+                                <p class="pj-item pj-mp3">Document.mp3</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <p class="credit">Code &copy; <a href="https://just-married.variousforum.com/u3777">Tsuki de JM!</a></p>
+            </div>
+        </div>
+        <div class="TSAT">
+            <section class="section">
+                <header><h2>Description</h2></header>
+                <article class="article">
+                    <p><strong>Nota bene :</strong> le code qui s'affiche dans cette page est une demo fonctionnelle à visée strictement illustrative (les liens ne dirigent pas forcément aux endroits concernés). Le code fourni plus bas, à donner aux membres, est la version vierge à compléter.</p>
+                    <p><strong>Nota Bene :</strong> le code est hébergé via Github Pages pour une maintenance plus efficace à l'avenir, et cette page est réservée au Staff de JM (un genre de tuto que je peux alimenter au fur et à mesure pour corriger des trucs).</p>
+                    <p>Je ne propose dans cette page qu'un descriptif du code à usage du Staff. Le code final est très simple à compléter, mais je préfère m'étendre ici de façon exhaustive pour couvrir tous les aspects du code et prévoir d'éventuelles questions. Je vous laisse gérer la façon dont vous le présenterez aux membres (c'est-à-dire, de façon plus concise !!) ^^</p>
+                    <hr>
+                    <h3>Description</h3>
+                    <p>Le code propose une interface Web classique d'affichage de messages type "mail" pour le tchat de l'application ATAI. Les messages que s'envoient les membres du fow via l'application peuvent tous prendre cette forme, avec l'avatar du destinataire dans la barre de navigation et de l'expéditeur dans l'entête du message, afin de simuler correctement l'affichage du message. Il est possible mais facultatif d'intégrer directement des images dans le corps du message, ou bien sous forme de pièces-jointes avec option thumbnail pour les images (simulées dans cette demo) ou option fichiers attachés (idem avec tous les formats possibles). Voici un descriptif exhaustif de l'ensemble :</p>
+                    <ul>
+                        <li>La <strong>barre de navigation</strong> est composée du logo (version inline) de l'app, du nom de la messagerie, et de l'avatar et du nom du destinataire du message. L'idée est que, si X envoie un message à Y sur le tchat, on ait accès à la version du message telle que reçu par le destinaire, soit Y. X étant l'expéditeur, ses informations apparaissent dans l'entête du message lui-même, exactement comme sur les messageries Web standards. <strong>Nota bene :</strong> le logo et le titre + icône de la messagerie sont injectés directement par le code CSS afin de ne pas surcharger le HTML.</li>
+                        <li><strong>L'entête du message</strong> contients les éléments personnalisables à compléter suivants : l'avatar de l'expéditeur, le nom complet de l'expéditeur, le lien vers le profil ATAI de l'expéditeur sur le fow, le lien vers le profil ATAI du destinataire sur le fow, la date d'envoi du message et l'icône (facultative) de pièce-jointe.</li>
+                        <li><strong>Le corps du message</strong>, dans la partie rose, contient le titre/objet du message et le contenu du message. Le titre et les paragraphes sont à compléter. Chaque paragraphe doit être inclus entre balises <code>&lt;p&gt;&lt;/p&gt;</code>.</li>
+                        <li><strong>Le pied du message</strong> est facultatif : on peut intégrer des thumbnails d'images partagées par le personnage, ou des fichiers attachés avec le format personnalisable. On ajoute l'icône de pièce-jointe dans l'entête si le pied contient des pièces-jointes.</li>
+                    </ul>
+                </article>
+            </section>
+            <section class="section">
+                <header><h2>Code</h2></header>
+                <article class="article">
+                    <p>Voici le code HTML à copier-coller puis à compléter pour créer un message de l'app ATAI d'un personnage : <a style="color: #a1265a;" href="https://raw.githubusercontent.com/manonstv/JM-LS/refs/heads/main/atai-tchat/atai-tchat.html" target="_blank">https://raw.githubusercontent.com/manonstv/JM-LS/refs/heads/main/atai-tchat/atai-tchat.html</a>.</p>
+                    <p>Vous accéderez au code "brut" de la partie HTML, qu'il suffit de copier-coller entre balises <code>[code][/code]</code> sur le forum pour le proposer aux membres.</p>
+                    <h3>Consignes</h3>
+                    <ul>
+                        <li>Les parties du code à compléter sont signalées par un <strong>commentaire</strong> en début de ligne. Pour les URL d'images et les liens à compléter, les indications sont signalées en <strong>lettres capitales</strong> et <strong>_underscores_</strong> dans les balises d'images et de liens concernées.</li>
+                        <li><strong>Ne pas ajouter d'espaces ou de sauts de lignes</strong>. Ils sont inclus et gérés par défaut par le code CSS.</li>
+                        <li>Tout ajout doit se faire par strict <strong>retour à la ligne</strong> en intégrant les parties de codes fournies par ce tutoriel.</li>
+                        <li>Ne supprimer aucun caractère ou aucun bout de code à l'exception de ceux expliqués dans ce tuto, car ils ont tous une utilité.</li>
+                        <li>Encore une fois, la partie HTML ne doit contenir <strong>aucun saut de ligne</strong>. Il faut préciser aux membres que le code ne contient AUCUNE erreur. Ils ne doivent donc pas retirer le moindre caractère du code, y compris les commentaires HTML cassés, sous peine de compromettre l'intégrité du rendu.</li>
+                    </ul>
+                    <p><strong>Astuce :</strong> les injections automatiques de sauts de lignes (<code>&lt;br&gt;</code>) intempestifs par le script de forumactif sont contournées grâce à une astuce donnée par <strong>Yuna</strong> : afin de rendre le code HTML + lisible, les retours à la ligne sont simulés par le "cassage" de commentaires HTML (<code>&lt;!-- --&gt;</code>), permettant des retours à la ligne dans le code source afin de le rendre moins dense et plus facilement personnalisable, le tout sans conséquence dans le rendu.</p>
+                    <h3>Personnalisation</h3>
+                        <ul><li>Pour ajouter ou supprimer un paragraphe dans le corps du message, il suffit d'ajouter ou de supprimer l'une de ces lignes de code :</li></ul>
+                        <pre><code>Paragraphe --&gt;&lt;p&gt;Ici&lt;/p&gt;&lt;!--</code></pre>
+                        <ul><li>Pour ajouter des thumbnails d'images partagées par le personnage, il faut ajouter ce bloc de code (ou le supprimer du code par défaut si le membre n'en veut pas) :</li></ul>
+                        <pre><code>--&gt;&lt;!-- DEBUT DU CODE : IMAGES EN PIECES JOINTES (FACULTATIF) --&gt;&lt;!--
+--&gt;&lt;div class=&quot;img-list&quot;&gt;&lt;!-- 
+--&gt;&lt;img src=&quot;URL_IMAGE_THUMBNAIL&quot; alt=&quot;...&quot;&gt;&lt;!-- 
+--&gt;&lt;img src=&quot;URL_IMAGE_THUMBNAIL&quot; alt=&quot;...&quot;&gt;&lt;!-- 
+--&gt;&lt;img src=&quot;URL_IMAGE_THUMBNAIL&quot; alt=&quot;...&quot;&gt;&lt;!-- 
+--&gt;&lt;/div&gt;&lt;!-- 
+--&gt;&lt;!-- FIN DU CODE : IMAGES EN PIECES JOINTES (FACULTATIF) --&gt;&lt;!--</code></pre>
+                        <ul><li>Pour ajouter ou supprimer des images de la partie thumbnails, il suffit d'ajouter ou de supprimer l'une de ces lignes de code :</li></ul>
+                        <pre><code>--&gt;&lt;img src=&quot;URL_IMAGE_THUMBNAIL&quot; alt=&quot;...&quot;&gt;&lt;!-- </code></pre>
+                        <ul><li>Pour ajouter des fichiers comme pièces-jointes partagées par le personnage, il faut ajouter ce bloc de code (ou le supprimer du code par défaut si le membre n'en veut pas) :</li></ul>
+                        <pre><code>--&gt;&lt;!-- DEBUT DU CODE : FICHIERS EN PIECES JOINTES (FACULTATIF) --&gt;&lt;!--
+--&gt;&lt;div class=&quot;pj-list&quot;&gt;&lt;!--
+Fichier .pdf --&gt;&lt;p class=&quot;pj-item pj-pdf&quot;&gt;Document.pdf&lt;/p&gt;&lt;!--
+Fichier .doc --&gt;&lt;p class=&quot;pj-item pj-doc&quot;&gt;Document.doc&lt;/p&gt;&lt;!--
+Fichier CV --&gt;&lt;p class=&quot;pj-item pj-cv&quot;&gt;Document.pdf&lt;/p&gt;&lt;!--
+Fichier code --&gt;&lt;p class=&quot;pj-item pj-code&quot;&gt;Document.html&lt;/p&gt;&lt;!--
+Fichier jpg --&gt;&lt;p class=&quot;pj-item pj-jpg&quot;&gt;Document.jpg&lt;/p&gt;&lt;!--
+Fichier png --&gt;&lt;p class=&quot;pj-item pj-png&quot;&gt;Document.png&lt;/p&gt;&lt;!--
+Fichier mp4 --&gt;&lt;p class=&quot;pj-item pj-mp4&quot;&gt;Document.mp4&lt;/p&gt;&lt;!--
+Fichier mp3 --&gt;&lt;p class=&quot;pj-item pj-mp3&quot;&gt;Document.mp3&lt;/p&gt;&lt;!--
+--&gt;&lt;/div&gt;&lt;!--
+--&gt;&lt;!-- FIN DU CODE : FICHIERS EN PIECES JOINTES (FACULTATIF) --&gt;&lt;!--</code></pre>
+                        <ul><li>Pour ajouter ou supprimer des fichiers de la partie pièces-jointes, il suffit d'ajouter ou de supprimer l'une de ces lignes de code (et de préciser le format de fichier dans la classe et dans le nom donné au fichier) :</li></ul>
+                        <pre><code>Fichier .pdf --&gt;&lt;p class=&quot;pj-item pj-pdf&quot;&gt;Document.pdf&lt;/p&gt;&lt;!--</code></pre>
+                        <ul><li>Les classes disponibles pour 8 types de fichiers possibles sont les suivantes (elles génèrent automatiquement les icônes correspondantes) : <code>pj-pdf</code>, <code>pj-doc</code>, <code>pj-cv</code>, <code>pj-code</code>, <code>pj-jpg</code>, <code>pj-png</code>, <code>pj-mp4</code>, <code>pj-mp3</code>.</li></ul>
+                        <ul><li>Si le message ne contient aucune pièce-jointe partagée par le personnage, il faut retirer l'icone correspondante dans l'entête du message. Pour ce faire, il faut supprimer la classe <code>have-pj</code> de cette partie du code :</li></ul>
+                        <pre><code>Date d'envoi et icon pièce-jointe --&gt;&lt;p class=&quot;mail-date have-pj&quot;&gt;Ici&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;mail-body&quot;&gt;&lt;!--</code></pre>
+                    <h3>Résumé</h3>
+                    <p>Voici en définitive la liste exhaustive des parties du code à compléter (dans l'ordre) :</p>
+                    <ul>
+                        <li><strong>Barre de navigation :</strong> URL vers l'avatar ATAI du destinataire et nom complet du destinataire.</li>
+                        <li><strong>Entête du message :</strong> URL vers l'avatar ATAI de l'expéditeur, nom complet de l'expéditeur, lien vers le profil ATAI de l'expéditeur, identifiant ATAI de l'expéditeur, lien vers le profil ATAI du destinataire, identifiant ATAI du destinataire, date d'envoi du message, ajout/suppression de la classe <code>have-pj</code> pour l'icône de pièce-jointe.</li>
+                        <li><strong>Corps du message :</strong> objet/titre du message, paragraphes du message.</li>
+                        <li><strong>Pied du message (facultatif) :</strong> bloc de code pour les images en thumbnail + URL des images, bloc de code pour les fichiers en pièces-jointes + modifier les classes associées au format du fichier choisi.</li>
+                    </ul>
+                </article>
+            </section>
+            <section class="section">
+                <header><h2>Usages</h2></header>
+                <article class="article">
+                    <p><strong>Licence :</strong> j'autorise le Staff de JM à disposer comme il l'entend des codes sources de ce code pour le personnaliser à loisir.</p>
+                    <h3>Codes sources</h3>
+                    <p>Par soucis de simplicité, la partie CSS du code est hébergée via Github Page et liée à la partie HTML par une balise link. Pour accéder au code source des versions <strong>standard</strong> (commentée et expliquée), <strong>préfixée</strong> (pour optimisation sur tous navigateurs) et <strong>minifiée</strong> (pour performance au chargement), voici les différents liens :</p>
+                    <ul>
+                        <li>Version standard commentée et expliquée : <a style="color: #a1265a;" href="https://raw.githubusercontent.com/manonstv/JM-LS/refs/heads/main/atai-tchat/atai-tchat.css" target="_blank">https://raw.githubusercontent.com/manonstv/JM-LS/refs/heads/main/atai-tchat/atai-tchat.css</a></li>
+                        <li>Version préfixée : <a style="color: #a1265a;" href="https://raw.githubusercontent.com/manonstv/JM-LS/refs/heads/main/atai-tchat/atai-tchat-prefix.css" target="_blank">https://raw.githubusercontent.com/manonstv/JM-LS/refs/heads/main/atai-tchat/atai-tchat-prefix.css</a></li>
+                        <li>Version minifiée : <a style="color: #a1265a;" href="https://raw.githubusercontent.com/manonstv/JM-LS/refs/heads/main/atai-tchat/atai-tchat-min.css" target="_blank">https://raw.githubusercontent.com/manonstv/JM-LS/refs/heads/main/atai-tchat/atai-tchat-min.css</a></li>
+                    </ul>
+                    <p><strong>Au cas où :</strong> vous pouvez copier-coller ou bien télécharger le contenu de ces liens afin de modifier tout ou partie du code source à l'avenir, y compris pour l'héberger ailleurs ou le garder en local au cas où sur un PC, ou encore l'intégrer au CSS du fow (ce que je déconseille par soucis de compatibilité dans la priorisation CSS). Mais si vous ne comptez pas le modifier, laissez-le à cette adresse.</p>
+                    <p><strong>Conseil :</strong> pour une utilisation optimale, nul besoin de toucher au CSS. Laissez-le lié à la partie HTML (la seule à partager aux membres).</p>
+                </article>
+            </section>
+        </div>
+    </div>
+
+</body>
+</html>
